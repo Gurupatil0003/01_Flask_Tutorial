@@ -25,19 +25,22 @@ Compared to [Django](https://www.djangoproject.com/), Flask provides a lightweig
 
 -We will use virtualenv to create a virtual environment in Python.
 
-##Why do we need a virtual environment?
+## Why do we need a virtual environment?
 
 -Imagine a scenario where you are working on two web-based Python projects one of them uses Django 4.0 and the other uses Django 4.1 (check for the latest Django versions and so on). In such situations, we need to create a virtual environment in Python that can be really useful to maintain the dependencies of both projects.
 
-```bash
+### Installing Virtula environment
+```python
 #Installing Virtula environment
 pip install virtualenv
 ```
-```bash
+### Call Virutal Environment
+```python
 #Call Virutal Environment and it's  local directory Name  Like--- Venv or Guru or Data etc....
 virtualenv venv
 ```
-```bash
+### Activate a virtual environment
+```python
 #Activate a virtual environment based on your OS
 For windows > venv\Scripts\activate
 For linux > source ./venv/bin/activate
@@ -47,7 +50,8 @@ For linux > source ./venv/bin/activate
 
 *The easiest way to install [Flask](https://palletsprojects.com/p/flask/) is to use [PIP](https://pip.pypa.io/en/stable/quickstart/) the official package-management tool.*
 
-```bash
+### Install Flask Command
+```python
 pip install Flask
 ```
 
