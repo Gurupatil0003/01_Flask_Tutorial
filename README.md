@@ -124,3 +124,31 @@ if __name__=="__main__":
 *> The debugger allows executing arbitrary Python code from the browser. It is protected by a pin, but still represents a major security risk. Do not run the development server or   debugger in a production environment.*
 
 <hr>
+# Creation Routing App
+[Code Here ⚙️](/routing)
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'This is Index Page'
+
+@app.route('/login')
+def login():
+    return 'This is Login Page'
+
+@app.route('/hello')
+def hello():
+    return 'Hello, World'
+
+if __name__=="__main__":
+    app.run(debug=True)
+
+```
+
+> Modern web applications use meaningful URLs to help users. Users are more likely to like a page and come back if the page uses a meaningful URL they can remember and use to   directly visit a page.
+
+> Use the `route()` decorator to bind a function to a URL.
