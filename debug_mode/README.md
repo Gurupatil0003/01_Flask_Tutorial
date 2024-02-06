@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<p>Hello, Class!</p>"
 
 # debud mode running on 8000 port
 if __name__=="__main__":
