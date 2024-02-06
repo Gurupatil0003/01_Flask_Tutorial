@@ -154,4 +154,43 @@ if __name__=="__main__":
 
 > Use the `route()` decorator to bind a function to a URL.
 
+## Rendering Templates
 
+[Code Here ⚙️](/render_template)
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template('index.html')
+
+@app.route("/")
+def about():
+    return render_template('about.html')
+
+if __name__=="__main__":
+    app.run()
+    
+```
+
+```python
+python filename.py
+      or
+start flask
+ 
+```
+
+#### In flask, html file are served from the 'templates' folder by default and all the static file; images, css, js, etc are served from the 'static' folder. 
+
+> These folders should be present in the root directly of your python application
+
+<p align="center" >
+    
+<img src="https://i.ibb.co/7yp0z91/app-py.png"  alt="structure" style="width:350px" />
+
+</p>
+    
+<hr>
