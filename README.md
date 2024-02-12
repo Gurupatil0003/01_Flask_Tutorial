@@ -8,6 +8,8 @@
 - [Flask Project Structure](#flask-project-structure) - a few options
 - (WIP) [Flask Bootstrap Sample](#flask-bootstrap-sample) - a simple project built with Bootstrap
 - (WIP) [Jinja Template](#jinja-template) - how to render HTML pages efficiently
+- [Url_Variable Rule and Creatinng_url_Examle](#Url-Rule-&-Creation-url)-What is the Rule of Variable and creation of Url
+
 
 <br />
 
@@ -194,3 +196,27 @@ start flask
 </p>
     
 <hr>
+
+## Crl Rule and Url Creation
+
+[Code Here ⚙️](/render_template)
+
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template('index.html')
+
+@app.route("/")
+def about():
+    return render_template('about.html')
+
+if __name__=="__main__":
+    app.run()
+    
+```
+
+
