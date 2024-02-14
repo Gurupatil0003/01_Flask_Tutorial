@@ -1,15 +1,21 @@
-from flask import Flask, request, render_template
+from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/example', methods=['GET', 'POST'])
-def example():
-    if request.method == 'GET':
-        return render_template('df.html')
-    elif request.method == 'POST':
-        return render_template('l.html', data=request.form['data'])
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        # Handle user login data (e.g., validate credentials)
+        username = request.form.get('username')
+        # Process the data as needed
+        return f"Welcome, {username}!"
     else:
-        return 'Unsupported HTTP method.'
+        # Display the login form
+        return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
