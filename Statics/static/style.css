@@ -1,0 +1,26 @@
+body {
+    background-image: url('45.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    text-align: center;
+    color: white; /* Set text color to white or any color that contrasts well with the background image */
+}
+
+
+
+
+/*body {
+    background-image: url('45.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    text-align: center;
+    color: white; /* Set text color to white or any color that contrasts well with the background image */
+}/*
