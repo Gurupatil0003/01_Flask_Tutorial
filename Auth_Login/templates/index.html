@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<h1>Home Page</h1>
+<p>Hello there, you are logged in as <span class="text-success font-weight-bold">{{ current_user.name }}</span>.</p>
+<a href="{{ url_for('routes.logout') }}">Logout</a>
+{% endblock content %}

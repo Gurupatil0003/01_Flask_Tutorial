@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/images/favicon.ico"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css"/>
+    <!-- JAVASCRIPT -->
+    <script src="/js/main.js" defer></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true, category_filter=["success", "info"]) %}
+{% if messages %}
+{% for category, message in messages %}
+<div class="alert alert-{{ category }}" style="width: 100%; z-index: 999">
+    {{ message }}
+      <a class="close" href="#" onclick="this.parentElement.remove(); return false">×</a>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<main class="p-2">
+    {% block content %}
+    {% endblock content %}
+</main>
+
+<!-- Include Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

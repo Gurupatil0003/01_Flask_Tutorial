@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Register</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.name.label(class="form-control-label") }}
+                    {{ form.name(class="form-control" + (' is-invalid' if form.name.errors else '') ) }}
+                    {% for error in form.name.errors %}
+                    <div class="invalid-feedback">
+                        {{ error }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {{ form.email(class="form-control" + (' is-invalid' if form.email.errors else '') ) }}
+                    {% if form.email.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.email.errors[0] }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {{ form.password(class="form-control" + (' is-invalid' if form.password.errors else '') ) }}
+                    {% if form.password.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.password.errors[0] }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.confirm_password.label(class="form-control-label") }}
+                    {{ form.confirm_password(class="form-control" + (' is-invalid' if form.confirm_password.errors else
+                    '') ) }}
+                    {% if form.confirm_password.errors %}
+                    <div class="invalid-feedback">
+                        {{ form.confirm_password.errors[0] }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary btn-block") }}
+                </div>
+            </form>
+            <div class="form-group text-center">
+                Already have an account? <a href="{{ url_for('routes.login') }}">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

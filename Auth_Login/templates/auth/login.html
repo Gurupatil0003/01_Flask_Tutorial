@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center">Login</h2>
+            {% with errors = get_flashed_messages(category_filter=["danger"]) %}
+            {% if errors %}
+            <div class="alert alert-danger">
+                {{ errors[0] }}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {{ form.email(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {{ form.password(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.remember_me.label() }}
+                    {{ form.remember_me() }}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary btn-block") }}
+                </div>
+            </form>
+            <div class="form-group text-center">
+                Don't have an account? <a href="{{ url_for('routes.register') }}">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
