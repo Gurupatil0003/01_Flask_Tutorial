@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<h1>List of files</h1>
+<br>
+<table>
+<tr>
+<th>File Name</th>
+
+<th>Download</th>
+<th>Delete</th>
+</tr>
+{% for i in result %}
+<tr>
+<td>{{i}}</td>
+<td><form method="GET" action="http://127.0.0.1:5000/downloads/{{i}}">
+<input type = submit value = Download>
+</form></td>
+<td><form method="GET" action="http://127.0.0.1:5000/delete/{{i}}">
+<input type = submit value = Delete>
+</form></td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
