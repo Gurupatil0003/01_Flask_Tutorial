@@ -20,7 +20,7 @@ def load_user(user_id):
 def home():
     return render_template('index.html')
 
-
+to daughter I will be ready to hahaha
 @routes_bp.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
