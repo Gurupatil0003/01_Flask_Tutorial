@@ -1,0 +1,18 @@
+<html>
+<body>
+
+<h1>Welcome to Upload/download a file</h1>
+{{error}}
+<br>
+<h2>Upload a file</h2>
+<form method=post enctype=multipart/form-data>
+<input type=file name=file>
+<input type=submit value=Upload>
+</form>
+<form method=post action="http://127.0.0.1:5000/view" >
+<input type = submit value=View&nbsp;uploaded&nbsp;files>
+</form>
+
+
+</body>
+</html>
