@@ -46,8 +46,13 @@ virtualenv venv
 #Activate a virtual environment based on your OS
 For windows > venv\Scripts\activate
 For linux > source ./venv/bin/activate
-```
 
+```
+#If your Facing Any error Then Try this
+```python
+Set-ExecutionPolicy RemoteSigned -Scope Process
+
+```
 ## Install Flask
 
 *The easiest way to install [Flask](https://palletsprojects.com/p/flask/) is to use [PIP](https://pip.pypa.io/en/stable/quickstart/) the official package-management tool.*
