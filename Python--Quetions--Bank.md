@@ -131,7 +131,14 @@ print(my_list)  # Output: [1, 2, 4, 5]
 Python has a built-in **`open()`** function to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
 
 
-<img src=\"https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Images/ReadOpen.png\" width=\"500\" />
+{
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+   "<img src=\"https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Images/ReadOpen.png\" width=\"500\" />"
+   ]
+   
+  }<img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/blob/main/Images/Screenshot%202024-03-25%20171440.png"  alt="structure" width="100%"  />
 
 ```python
 
