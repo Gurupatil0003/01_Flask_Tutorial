@@ -257,6 +257,7 @@ else:
 ```
 ## 12.What is the purpose of abstraction in object-oriented programming?
 
+## 13.What is the purpose of Python libraries like pymysql and pymongo?
 | Feature                | pymysql                                                  | pymongo                                                |
 |------------------------|----------------------------------------------------------|--------------------------------------------------------|
 | Purpose                | Python client library for MySQL databases                | Python driver for MongoDB databases                    |
@@ -270,4 +271,47 @@ else:
 |                        | Data analysis and manipulation with MySQL databases     | Building scalable and flexible data storage solutions with MongoDB |
 |                        | Integrating MySQL databases into Python-based projects | Analyzing large datasets stored in MongoDB collections |
 |                        |                                                          | Integrating MongoDB databases into Python-based applications (IoT projects, analytics platforms, etc.) |
+
+
+## 14.How do URLs contribute to RESTful API design?
+REST (Representational State Transfer) API URLs (Uniform Resource Locators) are specific addresses used to access and interact with resources within a specific RESTful API. These addresses are unique, each one leading to a specific data or functionality within the REST API.
+
+### REST API URLs Strucutre
+- To be able to reproduce REST API URLs in a standardized manner, REST API URLs have a common shared structure, which consists of:
+
+- Protocol: Protocols are usually in the form of HTTP or HTTPS, which specify how to communicate with the API.
+- Host: The host defines the server address where the API resides (e.g., api.example.com).
+- Path: A path defines the specific resource within the API, starting with a forward slash (e.g., /users).
+- Query String (optional): Query strings, which are optional, allow developers to add additional parameters that can filter or refine the resource, using key- 
+  value pairs after a question mark (e.g., /users?name=John).
+
+
+### Why Do We Need to Understand REST API URLs?
+- There are a variety of reasons why web developers are required to understand the core concept of REST API URLs. These are a few of the main reasons:
+
+- Clarity and Precision: By understanding a REST API URL, you can identify specific resources, ensuring accurate interactions.
+  Usability and Consistency: Well-structured REST API URLs promote ease of understanding and prediction.
+  Interoperability and Standards: Following best practices for REST API URLs enables smooth communication with various tools and applications, making it easier 
+  for other developers to use your API
+  Versioning and Evolution: Clear versioning schemes aid in managing REST API URL updates and maintaining compatibility.
+  Security and Control: REST API URLs can be designed to limit access to sensitive data from the public or malicious users.
+
+### Examples of REST API URLs
+- If you are wondering what REST API URLs look like, here are a few real-world samples of REST API URLs that you may have come across before reading this article!
+
+- GitHub: https://api.github.com/users/Bard retrieves information about the user "Bard".
+- OpenWeatherMap: https://api.openweathermap.org/data/2.5/weather?q=London gets weather data for London.
+- Unsplash: https://api.unsplash.com/photos/random?count=1 retrieves one random photo.
+- These REST API URLs are commonly seen as the website address, which changes whenever a relay of data is required, or when you change web pages.
+
+## 15.What function is used to convert a string to lowercase in Python?
+In Python, you can use the lower() method to convert a string to lowercase. This method returns a copy of the string with all uppercase characters converted to lowercase.
+
+Here's how you can use the lower() method:
+```python
+my_string = "Hello World"
+lowercase_string = my_string.lower()
+print(lowercase_string)  # Output: hello world
+
+```
 
