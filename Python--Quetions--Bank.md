@@ -128,7 +128,9 @@ del my_list[2]
 
 print(my_list)  # Output: [1, 2, 4, 5]
 ```
-## 7.Python has a built-in **`open()`** function to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+## 7.How do you open a file in Python using the open() function?
+
+Python has a built-in **`open()`** function to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
 
 ## Syntax
 <img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/blob/main/Images/ReadOpen.png"  alt="structure" width="100%"  />
@@ -140,6 +142,10 @@ f = open("test.txt")   # equivalent to 'r' or 'rt'
 f = open("test.txt",'w')  # write in text mode
 ```
 ## 8.What is the role of views in Django and how are they mapped to URLs?
+
+## 9.What is the primary purpose of resource representations in RESTful APIs?
+
+## 10.What do HTTP status codes indicate in RESTful API responses?
 
 - HTTP status codes are three-digit codes that indicate the outcome of an API request. They are included in the API’s response to the API client, and they include 
  important information that helps the client know how to proceed.
@@ -224,6 +230,7 @@ Response status codes beginning with the digit "5" indicate cases in which the s
     HTTP_511_NETWORK_AUTHENTICATION_REQUIRED
 
 
+
 ## 11.How can you check if a value exists in a set in Python?
 ```python
 my_set = {1, 2, 3, 4, 5}
@@ -248,6 +255,19 @@ else:
 
 
 ```
+## 12.What is the purpose of abstraction in object-oriented programming?
 
-
+| Feature                | pymysql                                                  | pymongo                                                |
+|------------------------|----------------------------------------------------------|--------------------------------------------------------|
+| Purpose                | Python client library for MySQL databases                | Python driver for MongoDB databases                    |
+|                        |                                                          |                                                        |
+| **Connection**         | Establish connections to MySQL databases                 | Establish connections to MongoDB databases             |
+| **Query Execution**    | Execute SQL queries and statements                      | Insert, query, update, and delete documents           |
+| **Result Handling**    | Fetch query results as Python objects                   | N/A (Documents returned as dictionaries)              |
+| **Transactions**       | Handle transactions                                     | N/A (MongoDB uses atomic operations on single documents)|
+|                        |                                                          |                                                        |
+| **Typical Use Cases**  | Building web applications with MySQL backends           | Developing web applications with MongoDB backends     |
+|                        | Data analysis and manipulation with MySQL databases     | Building scalable and flexible data storage solutions with MongoDB |
+|                        | Integrating MySQL databases into Python-based projects | Analyzing large datasets stored in MongoDB collections |
+|                        |                                                          | Integrating MongoDB databases into Python-based applications (IoT projects, analytics platforms, etc.) |
 
