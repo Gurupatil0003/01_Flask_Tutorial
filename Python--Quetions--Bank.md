@@ -222,3 +222,32 @@ Response status codes beginning with the digit "5" indicate cases in which the s
     HTTP_504_GATEWAY_TIMEOUT
     HTTP_505_HTTP_VERSION_NOT_SUPPORTED
     HTTP_511_NETWORK_AUTHENTICATION_REQUIRED
+
+
+## 11.How can you check if a value exists in a set in Python?
+```python
+my_set = {1, 2, 3, 4, 5}
+
+# Check if a value exists in the set
+if 3 in my_set:
+    print("3 exists in the set")
+else:
+    print("3 does not exist in the set")
+
+# Check if a value does not exist in the set
+if 6 not in my_set:
+    print("6 does not exist in the set")
+else:
+    print("6 exists in the set")
+```
+### output
+```python
+
+3 exists in the set
+6 does not exist in the set
+
+
+```
+
+
+
