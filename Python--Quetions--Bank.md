@@ -1,4 +1,4 @@
--1.How can you add a new key-value pair to a dictionary in Python?
+- 1.How can you add a new key-value pair to a dictionary in Python?
 ~~~python
 
 my_dict = {'key1': 'geeks', 'key2': 'for'}
