@@ -46,22 +46,26 @@ except Exception as e:
 
 ## 3.What is the role of the cursor() method in   Python's MySQL database connectivity?
 
-- The cursor() method in Python's MySQL  database connectivity, specifically with  libraries like mysql-connector-python, plays a  vital role in interacting with the database.  Here's a breakdown of its function:
+- The cursor() method in Python's MySQL  database connectivity, specifically with  libraries like mysql-connector-python, plays a  vital role in interacting with 
+  the database.  Here's a breakdown of its function:
 
 - Creating a Cursor Object:
 
-- When you call cursor() on a MySQL connection   object, it returns a cursor object. This object     acts as an intermediary between your Python  program and the MySQL server.
- Executing Database Operations:
+- When you call cursor() on a MySQL connection   object, it returns a cursor object. This object     acts as an intermediary between your Python  program and the 
+  MySQL server.
+  Executing Database Operations:
 
-- The cursor object allows you to execute  various database operations, primarily through  the execute() method. You can pass SQL statements (SELECT, INSERT, UPDATE, DELETE, etc.) to execute().
-Fetching Results (for queries):
+- The cursor object allows you to execute  various database operations, primarily through  the execute() method. You can pass SQL statements (SELECT, INSERT, 
+  UPDATE, DELETE, etc.) to execute().
+  Fetching Results (for queries):
 
-- If your SQL statement retrieves data (like a  SELECT query), the cursor object helps you  fetch the results one row at a time or in  batches. It provides methods like fetchone(),  fetchall(), etc., to retrieve data.
+- If your SQL statement retrieves data (like a  SELECT query), the cursor object helps you  fetch the results one row at a time or in  batches. It provides methods 
+  like fetchone(),  fetchall(), etc., to retrieve data.
 
 
   ## 4.What is the Django admin console used for in a Django project?
 
-
+```python
 Username: Guru 
 Email address: guru@dummymail.com
 Password:
@@ -72,15 +76,16 @@ This password is entirely numeric.
 My password did not meet the criteria, but this is a test environment, and I choose to create user anyway, by enter y:
 
 Bypass password validation and create user anyway? [y/N]: y
+```
+- If you press [Enter], you should have successfully created a user:
 
-If you press [Enter], you should have successfully created a user:
+- Superuser created successfully.
 
-Superuser created successfully.
+- Now start the server again:
 
-Now start the server again:
-
+```python
 py manage.py runserver
-
+```
 In the browser window, type 127.0.0.1:8000/admin/ in the address bar.
 
 <img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/blob/main/Images/Screenshot%202024-03-25%20171440.png"  alt="structure" width="100%"  />
