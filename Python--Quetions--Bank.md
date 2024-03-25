@@ -62,8 +62,22 @@ except Exception as e:
 - If your SQL statement retrieves data (like a  SELECT query), the cursor object helps you  fetch the results one row at a time or in  batches. It provides methods 
   like fetchone(),  fetchall(), etc., to retrieve data.
 
+## 4.What is the Django admin console used for in a Django project?
+- One of the most powerful parts of Django is the automatic admin interface. It reads metadata from your models to provide a quick, model-centric interface where 
+ trusted users can manage content on your site. The admin’s recommended use is limited to an organization’s internal management tool. It’s not intended for 
+ building your entire front end around.
 
-  ## 4.What is the Django admin console used for in a Django project?
+- The Django admin application can use your models to automatically build a site area that you can use to create, view, update, and delete records. This can save 
+  you a lot of time during development, making it very easy to test your models and get a feel for whether you have the right data.
+
+#### Creating a superuser
+
+- In order to log into the admin site, we need a user account with Staff status enabled. In order to view and create records we also need this user to have 
+  permissions to manage all our objects. You can create a "superuser" account that has full access to the site and all needed permissions using manage.py.
+
+```pythom
+python manage.py createsuperuser
+```
 
 ```python
 Username: Guru 
@@ -94,4 +108,32 @@ And fill in the form with the correct username and password:
 
 <img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/blob/main/Images/Screenshot%202024-03-25%20171504.png"  alt="structure" width="100%"  />
 
+Now We successfully Login
 <img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/blob/main/Images/Screenshot%202024-03-25%20171516.png"  alt="structure" width="100%"  />
+
+
+### 5.What is the role of HTTP methods in RESTful APIs?
+
+
+### 6.Describe the purpose of the del keyword in Python.
+
+Python’s del statement is used to delete variables and objects in the Python program. Iterable objects such as user-defined objects, lists, set, tuple, dictionary, variables defined by the user, etc. can be deleted from existence and from the memory locations in Python using the del statement. 
+
+
+```python
+my_list = [1, 2, 3, 4, 5]
+
+# Delete the element at index 2 (value 3)
+del my_list[2]
+
+print(my_list)  # Output: [1, 2, 4, 5]
+```
+Python has a built-in **`open()`** function to open a file. This function returns a file object, also called a handle, as it is used to read or modify the file accordingly.
+
+
+<img src=\"https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%204/Images/ReadOpen.png\" width=\"500\" />
+
+```python
+
+f = open(\"test.txt\")
+```
