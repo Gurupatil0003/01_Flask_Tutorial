@@ -314,4 +314,52 @@ lowercase_string = my_string.lower()
 print(lowercase_string)  # Output: hello world
 
 ```
+## 16.How is the super() function utilized in Python?
 
+- he super() function in Python is used to access methods and properties from a parent or superclass within a subclass. It provides a way to delegate method calls 
+  to the parent class, allowing you to invoke methods defined in the superclass without explicitly naming the superclass.
+
+- When a class inherits all properties and behavior from the parent class is called inheritance. In such a case, the inherited class is a subclass and the latter 
+  class is the parent class.
+
+- In child class, we can refer to parent class by using the super() function. Python super() function returns a temporary object of the parent class that allows 
+ us to call a parent class method inside a child class method.
+
+- Benefits of using the super() function are:
+
+- We are not required to remember or specify the parent class name to access its methods.
+- We can use the super() function in both single and multiple inheritances.
+- The super() function support code reusability as there is no need to write the entire function
+  
+```python
+
+# Example 1:
+
+class Company:
+    def company_name(self):
+        return 'Google'
+
+class Employee(Company):
+    def info(self):
+        # Calling the superclass method using super()function
+        c_name = super().company_name()
+        print("Arthur works at", c_name)
+
+# Creating object of child class
+emp = Employee()
+emp.info()
+
+```
+
+- note:
+ In the above example, we create a parent class Company and child class Employee. In Employee class, we call the parent class method by using a super() function.
+
+## 17.What data structures in Python are similar to lists but are immutable?
+
+- In Python, the data structure that is similar to a list but immutable is called a tuple.
+- 
+- Tuples are almost identical to lists, so they contain an ordered collection of elements, except for one property: they are immutable. We would use tuples if we 
+ needed a data structure that, once created, cannot be modified anymore.
+
+- A tuple is an ordered collection of elements, similar to a list, but it is immutable, meaning its elements cannot be changed or modified after creation. Tuples 
+ are defined using parentheses () and can contain elements of any data type, including other tuples.
