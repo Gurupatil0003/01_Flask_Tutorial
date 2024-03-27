@@ -363,3 +363,182 @@ emp.info()
 
 - A tuple is an ordered collection of elements, similar to a list, but it is immutable, meaning its elements cannot be changed or modified after creation. Tuples 
  are defined using parentheses () and can contain elements of any data type, including other tuples.
+## 18.What is the term for the process of bundling data and methods together within a class?
+
+
+## 19.Which method is used to insert a document into a MongoDB collection using PyMongo?
+
+```pytohn
+import pymongo
+
+# Connect to MongoDB
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["mydatabase"]
+mycollection = db["mycollection"]
+
+# Insert a single document
+data = {"name": "John", "age": 30}
+result = mycollection.insert_one(data)
+
+```
+## 20.For what purpose does the Django admin console provide a user interface?
+- The Django admin console provides a user interface for the purpose of managing the data and functionality of a Django web application. It serves as an - 
+  administrative interface for interacting with the backend of the application without writing custom views or forms. Some of the key purposes of the Django admin 
+
+### console are:
+
+- Data Management: Admins can manage (create, read, update, delete) the data stored in the application's database. This includes CRUD operations on models defined 
+ in the Django application.
+
+- User Authentication and Authorization: Admins can manage user accounts, permissions, and groups. They can create, modify, and delete user accounts, assign 
+ specific permissions to users, and group users based on their roles.
+
+- Customization: The Django admin console is highly customizable. Developers can customize the appearance and behavior of the admin interface by modifying the 
+ admin site configuration, adding custom admin views, and overriding admin templates.
+
+- Logging and Monitoring: Admins can view and analyze logs, perform monitoring tasks, and track user activity within the admin interface. They can monitor changes 
+ made to data by users and track system events.
+
+- Debugging and Troubleshooting: The admin console can be used for debugging and troubleshooting purposes. Admins can view detailed error messages, inspect 
+ database queries, and diagnose issues with data integrity or application functionality.
+
+- Overall, the Django admin console provides a convenient and powerful interface for administrators to manage various aspects of a Django application, thereby 
+  streamlining the process of backend administration and reducing the need for manual intervention.
+
+ ## 21.Which Python library is commonly used for consuming RESTful APIs? 
+
+- The Python library commonly used for consuming RESTful APIs is called requests.
+
+- The requests library is a popular HTTP library for making HTTP requests in Python. It provides a simple and intuitive API for interacting with RESTful APIs, 
+ allowing you to send HTTP requests, handle responses, and work with JSON data easily.
+
+- Here's a basic example of how to use the requests library to make a GET request to a RESTful API:
+
+```python
+import requests
+
+# Make a GET request to a RESTful API endpoint
+response = requests.get('https://api.example.com/data')
+
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+    print(data)
+else:
+    print('Error:', response.status_code)
+```
+
+ ## 22.Which keyword is used to exit a loop prematurely in Python?
+- he keyword used to exit a loop prematurely in Python is break.
+
+- The break keyword is used within loops (such as for and while loops) to terminate the loop prematurely when a certain condition is met. When break is 
+ encountered within a loop, the loop is immediately exited, and the program continues with the next statement after the loop.
+
+- Here's an example of using break to exit a loop:
+
+```python
+# Example using a while loop
+i = 0
+while i < 5:
+    print(i)
+    if i == 3:
+        break  # Exit the loop when i equals 3
+    i += 1
+
+# Example using a for loop
+for i in range(5):
+    print(i)
+    if i == 3:
+        break  # Exit the loop when i equals 3
+```
+
+## 23.In MySQL database connectivity with Python, which method is used to execute SQL queries?
+```python
+import pymysql
+
+# Connect to MySQL
+connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='mgpatils',
+                             database='patils',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+try:
+    # Create a cursor object
+    with connection.cursor() as cursor:
+        # SQL query to execute
+        sql_query = "SELECT * FROM routess"
+
+        # Execute the SQL query
+        cursor.execute(sql_query)
+
+        # Fetch the result
+        result = cursor.fetchall()
+
+        # Process the result
+        for row in result:
+            print(row)
+
+finally:
+    # Close the connection
+    connection.close()
+```
+
+## 24.What administrative tasks can be performed using the Django admin console?
+
+- The Django admin console provides a user-friendly interface for performing various administrative tasks in a Django web application. Some of the key 
+ administrative tasks that can be performed using the Django admin console include:
+
+- Managing Models: Admins can manage the data stored in the application's database by performing CRUD (Create, Read, Update, Delete) operations on the models 
+ defined in the Django application. This includes adding, editing, and deleting records from the database tables.
+
+- User Authentication and Authorization: Admins can manage user accounts, permissions, and groups. They can create, modify, and delete user accounts, assign 
+ specific permissions to users, and group users based on their roles. The Django admin console provides built-in support for user authentication and authorization.
+
+- Customization: The Django admin console is highly customizable. Developers can customize the appearance and behavior of the admin interface by modifying the 
+ admin site configuration, adding custom admin views, and overriding admin templates. This allows developers to tailor the admin interface to suit the specific 
+ requirements of the application.
+
+- Logging and Monitoring: Admins can view and analyze logs, perform monitoring tasks, and track user activity within the admin interface. They can monitor changes 
+ made to data by users, track system events, and analyze usage patterns. The Django admin console provides tools for logging and monitoring activities within the 
+ application.
+
+- Debugging and Troubleshooting: The Django admin console can be used for debugging and troubleshooting purposes. Admins can view detailed error messages, inspect 
+ database queries, and diagnose issues with data integrity or application functionality. They can also view system logs and analyze error reports to identify and 
+ fix problems.
+
+- Overall, the Django admin console serves as a powerful tool for managing and administering Django web applications, providing a convenient and centralized 
+ interface for performing a wide range of administrative tasks.
+
+## 25.Difference Between Set and Dictionary in Python: Set vs Dictionary
+
+| Parameter    | Set                                          | Dictionary                                      |
+|--------------|----------------------------------------------|-------------------------------------------------|
+| Definition   | An unordered collection of unique elements. | An ordered collection of key-value pairs.       |
+| Representation | Curly braces {}.                             | Curly braces {}, but with key-value pairs.     |
+| Order        | Unordered.                                    | Ordered (from Python 3.7 onwards).              |
+| Duplicates   | Does not allow duplicate elements.            | Does not allow duplicate keys.                  |
+| Mutability   | Mutable (can add or remove elements).        | Mutable (can add, modify, or remove key-value pairs). |
+| Access Method| Elements are accessed directly.               | Values are accessed using keys.                 |
+| Use Case     | To store unique elements.                     | To store related pieces of information.         |
+| Example      | `my_set = {1, 2, 3}`                         | `my_dict = {"name": "Alice", "age": 30}`       |
+
+## 26.How do you handle a ZeroDivisionError exception in Python?
+
+- In Python, you can handle a ZeroDivisionError exception using a try-except block. Here's how you can handle the ZeroDivisionError:
+```python
+try:
+    result = numerator / denominator
+except ZeroDivisionError:
+    # Handle the ZeroDivisionError exception
+    print("Error: Division by zero is not allowed.")
+
+```
+In this code:
+
+- The code inside the try block attempts to perform a division operation.
+- If the division operation encounters a division by zero, a ZeroDivisionError exception is raised.
+- The except ZeroDivisionError block catches the ZeroDivisionError exception.
+- Inside the except block, you can specify the actions to take when a ZeroDivisionError occurs. In this example, it simply prints an error message, but you can - - customize the handling based on your requirements.
+- By using a try-except block to handle the ZeroDivisionError, you can gracefully handle the error and prevent your program from crashing.
