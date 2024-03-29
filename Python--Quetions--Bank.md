@@ -542,3 +542,168 @@ In this code:
 - The except ZeroDivisionError block catches the ZeroDivisionError exception.
 - Inside the except block, you can specify the actions to take when a ZeroDivisionError occurs. In this example, it simply prints an error message, but you can - - customize the handling based on your requirements.
 - By using a try-except block to handle the ZeroDivisionError, you can gracefully handle the error and prevent your program from crashing.
+
+
+
+
+
+
+## 44.Write a program to demonstrate how to insert a row into the table using MySQL and Python.
+~~~python
+import pymysql
+
+def insert_row(data):
+    try:
+        # Establish a connection to the MySQL database
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='mgpatils',
+                                     database='Guru')
+
+        # Create a cursor object
+        cursor = connection.cursor()
+
+        # SQL INSERT statement with placeholders
+        sql = "INSERT INTO people (name, age) VALUES (%s, %s)"
+
+        # Execute the SQL INSERT statement with the provided data
+        cursor.execute(sql, data)
+        
+        # Commit the transaction
+        connection.commit()
+        print("Row inserted successfully!")
+        
+    except Exception as e:
+        # Rollback the transaction in case of an error
+        connection.rollback()
+        print("Error:", e)
+        
+    finally:
+        # Close the cursor and connection
+        cursor.close()
+        connection.close()
+
+# Example data to insert into the table
+data_to_insert = ('John', 30)
+
+# Call the insert_row function with the example data
+insert_row(data_to_insert)
+
+
+~~~
+## Select query using MySQL and Python
+
+
+- To execute a SELECT query using MySQL and Python with the pymysql library, follow these steps:
+
+- Import the pymysql module: First, import the pymysql module in your Python script.
+
+- Establish a connection to the MySQL database: Use the pymysql.connect() function to establish a connection to your MySQL database. Provide the necessary connection parameters such as host, user, password, and database name.
+
+- Create a cursor object: Once the connection is established, create a cursor object using the cursor() method of the connection object. The cursor object will be used to execute SQL queries.
+
+- Execute SQL SELECT statement: Use the execute() method of the cursor object to execute an SQL SELECT statement.   Provide the SELECT statement as a string.
+
+- Fetch data from the cursor: After executing the SELECT statement, use the fetchall() or fetchone() method of the     cursor object to fetch the result set. This method returns the query results as a tuple or a list of tuples.
+
+- Process the query results: Process the fetched data as needed in your Python script.
+
+- Close the cursor and connection: Finally, close the cursor and connection using the close() method of the cursor and    connection objects, respectively.
+~~~python
+import pymysql
+
+def execute_select_query():
+    try:
+        # Establish a connection to the MySQL database
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='mgpatils',
+                                     database='Guru')
+
+        # Create a cursor object
+        cursor = connection.cursor()
+
+        # SQL SELECT statement
+        sql = "SELECT * FROM people"
+
+        # Execute the SQL SELECT statement
+        cursor.execute(sql)
+
+        # Fetch all rows from the result set
+        rows = cursor.fetchall()
+
+        # Process the query results
+        for row in rows:
+            print(row)
+
+    except Exception as e:
+        print("Error:", e)
+
+    finally:
+        # Close the cursor and connection
+        cursor.close()
+        connection.close()
+
+# Call the execute_select_query function to execute the SELECT query
+execute_select_query()
+~~~
+
+## 48.Delete query using MySQL and Python
+- To execute a DELETE query using MySQL and Python with the pymysql library, you can follow these steps:
+
+- Import the pymysql module: First, import the pymysql module in your Python script.
+
+- Establish a connection to the MySQL database: Use the pymysql.connect() function to establish a connection to your  MySQL database. Provide the necessary connection parameters such as host, user, password, and database name.
+
+- Create a cursor object: Once the connection is established, create a cursor object using the cursor() method of the connection object. The cursor object will be used to execute SQL queries.
+
+- Execute SQL DELETE statement: Use the execute() method of the cursor object to execute an SQL DELETE statement. Provide the DELETE statement as a string.
+
+- Commit the transaction: After executing the DELETE statement, commit the transaction using the commit() method of the connection object to save the changes to the database.
+
+- Close the cursor and connection: Finally, close the cursor and connection using the close() method of the cursor and connection objects, respectively.
+
+- Here's an example demonstrating how to execute a DELETE query using pymysql:
+
+~~~python
+
+import pymysql
+
+def execute_delete_query():
+    try:
+        # Establish a connection to the MySQL database
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='mgpatils',
+                                     database='Guru')
+
+        # Create a cursor object
+        cursor = connection.cursor()
+
+        # SQL DELETE statement
+        sql = "DELETE FROM people WHERE condition"
+
+        # Execute the SQL DELETE statement
+        cursor.execute(sql)
+
+        # Commit the transaction
+        connection.commit()
+        print("Rows deleted successfully!")
+
+    except Exception as e:
+        # Rollback the transaction in case of an error
+        connection.rollback()
+        print("Error:", e)
+
+    finally:
+        # Close the cursor and connection
+        cursor.close()
+        connection.close()
+
+# Call the execute_delete_query function to execute the DELETE query
+execute_delete_query()
+
+
+
+~~~~
+
