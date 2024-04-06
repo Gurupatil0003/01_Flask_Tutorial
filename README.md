@@ -13,7 +13,7 @@
 
 <br />
 
-## What is Flask
+## What is Flask 
 
 *Flask is a lightweight web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
 Compared to [Django](https://www.djangoproject.com/), Flask provides a lightweight codebase and more freedom to the developer.*
