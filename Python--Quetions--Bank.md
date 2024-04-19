@@ -364,8 +364,55 @@ emp.info()
 - A tuple is an ordered collection of elements, similar to a list, but it is immutable, meaning its elements cannot be changed or modified after creation. Tuples 
  are defined using parentheses () and can contain elements of any data type, including other tuples.
 ## 18.What is the term for the process of bundling data and methods together within a class?
+- Encapsulation is an important concept in object-oriented programming that allows you to bundle data and methods together within a class, hiding the internal 
+ details and providing controlled access to the data. Python supports encapsulation through various mechanisms, enabling you to achieve data hiding and maintain 
+ the integrity of your objects. In this article, we will explore encapsulation in Python and how it helps achieve data hiding. Whether you are a beginner or an 
+ experienced programmer in domains like machine learning, data science, or artificial intelligence, understanding encapsulation is crucial for writing secure and 
+ maintainable Python code.
 
+<img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/assets/110026505/baa3b2f3-92a7-4987-b8a1-8135834893e3"  alt="structure" width="100%"  />
 
+#### Encapsulation and Data Hiding
+- Encapsulation is one of the core principles of object-oriented programming, along with inheritance and polymorphism. It involves bundling data (attributes) and 
+ methods together within a class and controlling access to the data from outside the class. By encapsulating data, you protect it from unauthorized access and 
+ manipulation, ensuring the integrity of the object’s internal state.
+
+- Python provides mechanisms to achieve data hiding, indicating that the internal details of an object should not be directly accessible from outside the class. 
+ This is typically done by using access modifiers such as public, protected, and private.
+
+- Public attributes/methods: Public attributes and methods are accessible from anywhere, both inside and outside the class. In Python, by default, all attributes 
+ and methods are considered public.
+
+- Protected attributes/methods: Protected attributes and methods are indicated by a single underscore (_) prefix. They are intended to be used within the class 
+ and its subclasses. Although they can be accessed from outside the class, it is generally considered a convention not to do so.
+
+- Private attributes/methods: Private attributes and methods are indicated by a double underscore (__) prefix. They are intended to be used only within the class 
+ and are not accessible from outside the class. Python internally performs name mangling to make the attribute/method name unique within the class, but they can 
+ still be accessed using a specific naming convention.
+
+<img src="https://github.com/Gurupatil0003/01_Flask_Tutorial/assets/110026505/5edfac47-1ddb-453b-9c80-e171ead806eb"  alt="structure" width="100%"  />
+
+- Example: Encapsulation and Data Hiding in Python
+- Consider a class Person that represents a person’s information, including their name and age. We’ll demonstrate the use of access modifiers to achieve data 
+ hiding.
+```python
+class Person:
+    def __init__(self, name, age):
+        self._name = name  # protected attribute
+        self.__age = age   # private attribute
+
+    def display(self):
+        print(f"Name: {self._name}, Age: {self.__age}")
+
+    def _method(self):
+        print("This is a protected method")
+
+    def __private_method(self):
+        print("This is a private method")
+
+    def access_private_method(self):
+        self.__private_method()  # accessing private method
+```
 ## 19.Which method is used to insert a document into a MongoDB collection using PyMongo?
 
 ```pytohn
@@ -577,8 +624,429 @@ Step to run the application: Run the application using the following command.
 ```python
 python main.py
 ```
-![image](https://github.com/Gurupatil0003/01_Flask_Tutorial/assets/110026505/452a0c98-24f1-4aab-b513-9035f1434f64)
+- It opens the browser
 <img src="(https://github.com/Gurupatil0003/01_Flask_Tutorial/assets/110026505/452a0c98-24f1-4aab-b513-9035f1434f64"  alt="structure" width="100%"  />
+
+## 29.What is the primary purpose of resource representations in RESTful APIs?
+
+- State means data Representational means formats (such as XML, JSON, YAML, HTML, etc) Transfer means carry data between consumer and provider using the HTTP protocol
+
+- What is REST API?
+- To understand what is a REST API, let’s, first of all, understand what is an API. An API stands for an application programming interface. It defines how 
+ applications or devices can connect to and communicate with each other.
+
+- A REST (Representational State Transfer) API is an architectural style for an API that uses HTTP (Hypertext Transfer Protocol) request methods to access and 
+ manipulate data over the Internet. The most popular HTTP request methods (which are explained below) are GET, POST, PUT, DELETE, PATCH, HEAD, TRACE, CONNECT and 
+ OPTIONS.
+
+- One of the examples of when REST APIs are used is when we need to expose back-end systems and data to front-end developers in a standardized format. That's why 
+ REST APIs architecture is vital when it comes to building web services that are consumed by a wide range of clients such as browsers, desktop applications and 
+ mobile devices.
+
+### HTTP Methods
+- HTTP (Hypertext Transfer Protocol) is a protocol that allows communication between clients and servers on the World Wide Web. There exist several dozen 
+ different HTTP Methods that can be used for different purposes. The main 9 most popular HTTP Methods are explained below.
+
+- GET - Retrieves data from the server.
+- POST - Submits data to be processed to the server.
+- PUT - Updates data on the server.
+- DELETE - Deletes data from the server.
+- PATCH - Applies partial modifications to a resource.
+- HEAD - Retrieves only the headers of a resource without the body.
+- OPTIONS - Retrieves the HTTP methods supported by a server for a specified URL.
+- TRACE - Echoes back the received request to the client, useful for testing or debugging.
+- CONNECT - Converts the request connection to a transparent TCP/IP tunnel, usually used for HTTPS tunneling through proxy servers.
+
+
+## 30.What is the purpose of the in keyword in Python? Provide an example.
+- In Python, the in keyword is used to check for membership in a sequence, such as a list, tuple, string, or dictionary keys. It returns True if the specified 
+  value is found in the sequence, otherwise False.
+  
+```python
+# Using 'in' with lists
+fruits = ['apple', 'banana', 'orange']
+print('banana' in fruits)  # Output: True
+print('grape' in fruits)   # Output: False
+
+# Using 'in' with strings
+sentence = 'The quick brown fox jumps over the lazy dog'
+print('brown' in sentence)   # Output: True
+print('cat' in sentence)      # Output: False
+
+# Using 'in' with dictionaries (checks for keys)
+person = {'name': 'John', 'age': 30, 'city': 'New York'}
+print('age' in person)   # Output: True
+print('gender' in person)   # Output: False
+```
+## 31.Describe how you would handle a FileNotFoundError in Python.
+- In each case, the in keyword checks whether the specified value is present in the given sequence or dictionary keys.
+
+- Handling a FileNotFoundError in Python involves anticipating the possibility of the file not being found and implementing appropriate error handling to 
+ gracefully deal with this situation. Here's how you can handle a FileNotFoundError:
+
+- Use a Try-Except Block: Enclose the code that may raise a FileNotFoundError within a try-except block. This allows you to catch the exception and handle it 
+ appropriately.
+```python
+try:
+    # Attempt to open the file
+    with open('myfile.txt', 'r') as file:
+        # Read or perform operations on the file
+        pass
+except FileNotFoundError:
+    # Handle the FileNotFoundError
+    print("File not found or cannot be opened.")
+
+```
+## 33.Explain the role of HTTP methods GET, POST, PUT, and DELETE in RESTful APIs.
+
+#### HTTP Methods
+- HTTP (Hypertext Transfer Protocol) is a protocol that allows communication between clients and servers on the World Wide Web. There exist several dozen 
+ different HTTP Methods that can be used for different purposes. The main 9 most popular HTTP Methods are explained below.
+
+- GET: The GET method is used to retrieve data from the server. It requests a representation of the specified resource and does not modify the resource's state on 
+ the server. It's typically used for safe and idempotent operations, meaning it should not change the state of the server and can be repeated multiple times with 
+ the same result.
+
+- POST: The POST method is used to submit data to the server to create a new resource. It requests that the server accept the data enclosed in the request payload 
+ and store it under the specified URI. It's commonly used for creating new resources, submitting form data, or uploading files.
+
+- PUT: The PUT method is used to update an existing resource or create a new resource if it doesn't exist at the specified URI. It replaces the entire resource 
+ with the request payload. It's idempotent, meaning that multiple identical requests should have the same effect as a single request.
+
+- DELETE: The DELETE method is used to request the removal of a resource identified by the specified URI. It's used to delete the resource from the server. Like 
+ PUT, it's also idempotent, meaning that making multiple identical requests has the same effect as a single request.
+
+#### Here's a summary of their roles:
+
+- GET: Retrieve data.
+- POST: Create a new resource.
+- PUT: Update or create a resource.
+- DELETE: Remove a resource.
+
+- These HTTP methods, when used in accordance with RESTful principles, enable the creation of APIs that are intuitive, efficient, and scalable. They map CRUD 
+ (Create, Read, Update, Delete) operations to standard HTTP methods, making it easier for developers to understand and interact with the API resources.
+
+## 34.How do you establish a connection to a MySQL database in Python using the pymysql library?
+
+To establish a connection to a MySQL database in Python using the pymysql library, you need to follow these steps:
+
+Install the pymysql library if you haven't already. You can install it using pip:
+```python
+pip install pymysql
+```
+- Import the pymysql module in your Python script.
+- Use the connect() function from pymysql to establish a connection to the MySQL database server by providing the necessary connection parameters such as host, 
+ user, password, and database name.
+- Optionally, you can handle exceptions such as pymysql.err.OperationalError and pymysql.err.MySQLError to manage connection errors gracefully.
+
+- Here's a basic example:
+
+```python
+import pymysql
+
+# Connection parameters
+host = 'localhost'
+user = 'root'
+password = 'mgpatilss'
+database = 'Guru'
+
+try:
+    # Establish connection
+    connection = pymysql.connect(host=host,
+                                 user=user,
+                                 password=password,
+                                 database=database,
+                                 cursorclass=pymysql.cursors.DictCursor)
+
+    # Create a cursor object
+    cursor = connection.cursor()
+
+    # Execute SQL queries
+    cursor.execute("SELECT * FROM your_table")
+
+    # Fetch and print results
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
+
+except pymysql.err.OperationalError as e:
+    print(f"Error: {e}")
+
+finally:
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
+```
+
+
+
+This code establishes a connection to the MySQL database, executes a SELECT query, fetches the results, and prints them. It also handles connection errors gracefully using exception handling.
+
+## 35.Explain the difference between a shallow copy and a deep copy of a list in Python.
+
+In Python, when you want to create a copy of a list, you can use either a shallow copy or a deep copy. Here's the difference between the two:
+
+#### Shallow Copy:
+- A shallow copy creates a new list object, but it does not create new objects for the elements within the list. Instead, it copies the references to the objects.
+ If the original list contains mutable objects (e.g., lists, dictionaries), changes made to these mutable objects in the copied list will also affect the original 
+ list and vice versa.
+- Shallow copy can be performed using slicing [:] or the copy() method from the copy module.
+```python
+original_list = [1, [2, 3], 4]
+shallow_copied_list = original_list[:]
+# Or: shallow_copied_list = original_list.copy()
+
+original_list[1][0] = 'a'
+print(original_list)  # Output: [1, ['a', 3], 4]
+print(shallow_copied_list)  # Output: [1, ['a', 3], 4]
+```
+#### Deep Copy:
+A deep copy creates a new list object and recursively creates new objects for all the elements within the list, including nested objects.
+Changes made to the elements in the copied list will not affect the original list, and vice versa.
+Deep copy can be performed using the deepcopy() function from the copy module.
+```python
+import copy
+
+original_list = [1, [2, 3], 4]
+deep_copied_list = copy.deepcopy(original_list)
+
+original_list[1][0] = 'a'
+print(original_list)  # Output: [1, ['a', 3], 4]
+print(deep_copied_list)  # Output: [1, [2, 3], 4]
+```
+In summary, while a shallow copy creates a new list object but shares the references to nested objects with the original list, a deep copy creates a completely new list with new copies of all nested objects, ensuring independence between the original and copied lists.
+
+## 36.How do you implement method overriding in Python?
+- Method overriding in Python allows a subclass to provide a specific implementation of a method that is already defined in its superclass. This allows the 
+ subclass to customize the behavior of the method without modifying the superclass implementation. Method overriding is achieved by defining a method in the 
+ subclass with the same name and signature as a method in the superclass. Here's how you implement method overriding in Python:
+
+- Define a superclass with a method that you want to override:
+```python
+class Animal:
+    def make_sound(self):
+        print("Generic animal sound")
+```
+- Create a subclass that inherits from the superclass and define a method with the same name and signature:
+```python
+class Dog(Animal):
+    def make_sound(self):
+        print("Bark")
+```
+Now, when you create an instance of the subclass and call the overridden method, the subclass method will be executed instead of the superclass method:
+```python
+animal = Animal()
+animal.make_sound()  # Output: Generic animal sound
+
+dog = Dog()
+dog.make_sound()  # Output: Bark
+```
+In this example, the make_sound() method is overridden in the Dog subclass. When you call make_sound() on a Dog instance, it prints "Bark" instead of "Generic animal sound" because the subclass method overrides the superclass method.
+
+
+## 37.How do you define and register models in a Django project?
+- Creating and Registering Models
+#### Follow these steps to create and register models in Django:
+
+#### Step 1: Define Your Model
+- Open your Django app’s models.py file. This is where you define your models.
+
+- Define a model class by creating a Python class that inherits from django.db.models.Model. For example, let’s create a simple Product model:
+
+```python
+# models.py
+from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    is_published = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+```
+- In this example, we’ve created a Product model with fields for name, description price and is_published.
+
+#### Step 2: Migrate Your Model
+- Django uses migrations to create and update database tables based on your model definitions.
+
+- Create an initial migration for your app:
+```python
+ python manage.py makemigrations your_app_name
+```
+ Replace your_app_name with the name of your Django app.
+
+- Apply the migrations to create the database table:
+
+```python
+ python manage.py migrate
+```
+#### Step 3: Register Your Model with the Admin Panel
+- Django’s admin panel provides a convenient interface for managing your database records. To make your model accessible via the admin panel:
+- Create an admin file for your app if it doesn’t already exist. In your app’s directory, create a file named admin.py.
+- Register your model in the admin.py file:
+```python
+# admin.py
+from django.contrib import admin
+from .models import Product
+
+admin.site.register(Product)
+```
+- This code imports the Product model and registers it with the admin panel.
+
+#### Step 4: Customize the Admin Panel (Optional)
+- You can further customize how your model is displayed in the admin panel by creating an admin class for it. For instance, you can specify which fields to 
+ display, search by, and filter on in the admin list view.
+
+```python
+# admin.py
+from django.contrib import admin
+from .models import Product
+
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price')
+    list_filter = ('price',)
+    search_fields = ('name',)
+
+admin.site.register(Product, ProductAdmin)
+Learn more about How to Customize Django Admin Interface
+```
+#### Step 5: Create Superuser
+- Before accessing the admin panel, create a superuser account with administrative privileges:
+```python
+python manage.py createsuperuser
+```
+Follow the prompts to set up your superuser account.
+
+##### Step 6: Run the Development Server
+- Start your Django development server:
+```python
+python manage.py runserver
+```
+- Access the admin panel in your web browser at http://127.0.0.1:8000/admin/, and log in using the superuser credenttials.
+
+#### Step 7: Add Data via the Admin Panel
+
+- In the admin panel, you can now add, view, edit, and delete Product records. Click “Products” under your app’s section to manage the data.
+
+## 38.What are the basic CRUD operations, and how are they performed in PyMongo for MongoDB?
+- CRUD operations stand for Create, Read, Update, and Delete, which are fundamental operations used to manipulate data in a database.
+
+- In PyMongo, the Python driver for MongoDB, you can perform CRUD operations as follows:
+
+#### Create (Insert):
+- To insert documents into a MongoDB collection, you can use the insert_one() or insert_many() methods.Example (Inserting a Single Document):
+```python
+from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+
+# Access database and collection
+db = client['your_database']
+collection = db['your_collection']
+
+# Insert a single document
+document = {"name": "John", "age": 30}
+result = collection.insert_one(document)
+```
+#### Read (Retrieve):
+- To retrieve documents from a MongoDB collection, you can use methods like find_one() or find().Example (Finding a Single Document):
+```python
+# Find a single document
+document = collection.find_one({"name": "John"})
+```
+- Example (Finding Multiple Documents):
+```python
+# Find multiple documents
+cursor = collection.find({"age": {"$gte": 25}})
+for document in cursor:
+    print(document)
+```
+#### Update:
+To update documents in a MongoDB collection, you can use methods like update_one() or update_many().Example (Updating a Single Document):
+```python
+# Update a single document
+collection.update_one({"name": "John"}, {"$set": {"age": 35}})
+
+```
+#### Delete:
+- To delete documents from a MongoDB collection, you can use methods like delete_one() or delete_many().Example (Deleting a Single Document):
+```python
+# Delete a single document
+collection.delete_one({"name": "John"})
+```
+- Example (Deleting Multiple Documents):
+```python
+# Delete multiple documents
+collection.delete_many({"age": {"$gte": 30}})
+```
+These are the basic CRUD operations performed in PyMongo for MongoDB. Each operation allows you to interact with MongoDB collections to manage data effectively.
+
+## 39.Describe how you would handle a FileNotFoundError in Python.
+- Handling a FileNotFoundError in Python involves using exception handling to gracefully manage situations where a file cannot be found. Here's how you can 
+ handle it:
+
+```python
+try:
+    # Attempt to open the file
+    with open('file.txt', 'r') as file:
+        data = file.read()
+    # Process the file data
+    print("File contents:", data)
+
+except FileNotFoundError:
+    # Handle the case where the file is not found
+    print("File not found.")
+
+```
+#### In this example:
+
+- The try block attempts to open the file named 'file.txt' in read mode and reads its contents.
+- If the file is found and successfully opened, the data is processed.
+- If a FileNotFoundError occurs (i.e., the file does not exist), the control flow moves to the except block, where you can specify how to handle this situation.
+- In this case, the program prints "File not found."
+- By using try and except, you can ensure that your program doesn't crash when encountering a FileNotFoundError, allowing you to handle the error gracefully and 
+ provide appropriate feedback to the user or take alternative actions as needed.
+
+## 40.Discuss the role of templates in Django and how they are rendered.
+
+## 41.A program that generates a random password of a specified length.
+```python
+import random
+import string
+def generate_password(length=8):
+    # Define the characters to use in the password
+    all_characters = string.ascii_letters + string.digits + string.punctuation
+    
+    # Use the random module to generate the password
+    password = ''.join(random.choice(all_characters) for i in range(length))
+    
+    return password
+
+password_length_str = input("Input the desired length of your password:")
+if password_length_str:
+    password_length = int(password_length_str)
+else:
+    password_length = 8
+
+password = generate_password(password_length)
+print(f"Generated password is: {password}")
+```
+
+## 43.A program that checks if a given string is a palindrome.
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+input_string = input("Enter a string: ")
+if is_palindrome(input_string):
+    print("Yes, it's a palindrome.")
+else:
+    print("No, it's not a palindrome.")
+```
 
 ## 44.Write a program to demonstrate how to insert a row into the table using MySQL and Python.
 ~~~python
@@ -623,7 +1091,17 @@ insert_row(data_to_insert)
 
 
 ~~~
-## Select query using MySQL and Python
+## 45.A program that sorts a list of numbers in ascending or descending order.
+```python
+List = [[2, 8, 10], [12, 45, 2], [4, 10, 1]]
+
+# Ascending
+print("Ascending:", sorted(List))
+
+# Descending
+print("Descending:", sorted(List, reverse=True))
+```
+## 47.Select query using MySQL and Python
 
 
 - To execute a SELECT query using MySQL and Python with the pymysql library, follow these steps:
