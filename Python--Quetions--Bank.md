@@ -543,10 +543,42 @@ In this code:
 - Inside the except block, you can specify the actions to take when a ZeroDivisionError occurs. In this example, it simply prints an error message, but you can - - customize the handling based on your requirements.
 - By using a try-except block to handle the ZeroDivisionError, you can gracefully handle the error and prevent your program from crashing.
 
+## 27
 
 
+## 28.What is Routing in Flask?
+- App Routing means mapping the URLs to a specific function that will handle the logic for that URL. Modern web frameworks use more meaningful URLs to help users   remember the URLs and make navigation simpler. 
 
+- Example: In our application, the URL (“/”) is associated with the root URL. So if our site’s domain was www.example.org and we want to add routing to 
+ “www.example.org/hello”, we would use “/hello”. 
 
+- To bind a function to an URL path we use the app.route decorator. In the below example, we have implemented the above routing in the flask.
+
+```python
+from flask import Flask 
+
+app = Flask(__name__) 
+
+# Pass the required route to the decorator. 
+@app.route("/hello") 
+def hello(): 
+	return "Hello, Welcome to GeeksForGeeks"
+	
+@app.route("/") 
+def index(): 
+	return "Homepage of GeeksForGeeks"
+
+if __name__ == "__main__": 
+	app.run(debug=True) 
+```
+- The hello function is now mapped with the “/hello” path and we get the output of the function rendered on the browser.
+
+Step to run the application: Run the application using the following command.
+```python
+python main.py
+```
+![image](https://github.com/Gurupatil0003/01_Flask_Tutorial/assets/110026505/452a0c98-24f1-4aab-b513-9035f1434f64)
+<img src="(https://github.com/Gurupatil0003/01_Flask_Tutorial/assets/110026505/452a0c98-24f1-4aab-b513-9035f1434f64"  alt="structure" width="100%"  />
 
 ## 44.Write a program to demonstrate how to insert a row into the table using MySQL and Python.
 ~~~python
