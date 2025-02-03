@@ -247,4 +247,41 @@ if __name__=="__main__":
     
 ```
 
+~~~python
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Form Example</title>
+</head>
+<body>
+    <h2>Enter Your Name</h2>
+    <form action="/" method="POST">
+        <input type="text" name="name" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
+~~~
+
+~~~python
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        name = request.form['name']  # Get data from form
+        return f"<h2>Hello, {name}!</h2><a href='/'>Go Back</a>"
+    return render_template('index.html')  # Render HTML form
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+~~~
 
