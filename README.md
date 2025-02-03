@@ -492,3 +492,148 @@ if __name__ == '__main__':
 
 
 ```
+
+# Login Redirect to home page
+
+```python
+
+from flask import Flask, render_template, request, redirect, url_for, flash
+import sqlite3
+from werkzeug.security import generate_password_hash, check_password_hash
+
+app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # For flash messages
+
+# Database setup
+def init_db():
+    with sqlite3.connect('users.db') as conn:
+        conn.execute('''CREATE TABLE IF NOT EXISTS users (
+                            id INTEGER PRIMARY KEY AUTOINCREMENT,
+                            username TEXT NOT NULL UNIQUE,
+                            password TEXT NOT NULL)''')
+        conn.commit()
+
+init_db()
+
+# Helper function to query the database for user details
+def get_user_by_username(username):
+    with sqlite3.connect('users.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = ?", (username,))
+        return cursor.fetchone()
+
+# Helper function to add a user to the database
+def add_user(username, password):
+    with sqlite3.connect('users.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+        conn.commit()
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/home2')
+def home2():
+    # Make sure the user is logged in (for simplicity, we are not implementing sessions here)
+    return render_template('home2.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        user = get_user_by_username(username)
+        if user and check_password_hash(user[2], password):  # Check if password matches
+            return redirect(url_for('home2'))  # Redirect to home2 after login
+        else:
+            flash('Invalid username or password', 'error')
+    return render_template('login.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        # Check if the username already exists
+        if get_user_by_username(username):
+            flash('Username already taken', 'error')
+        else:
+            hashed_password = generate_password_hash(password)
+            add_user(username, hashed_password)
+            return redirect(url_for('login'))
+    
+    return render_template('register.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+# index Html
+```html
+
+<h1>Welcome!</h1>
+<a href="/login">Login</a> | <a href="/register">Register</a>
+
+```
+# Login Html
+
+```python
+<h2>Login</h2>
+<form method="POST">
+    <label>Username:</label>
+    <input type="text" name="username" required><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<p>Don't have an account? <a href="/register">Register here</a></p>
+
+
+```
+
+# Register Html
+
+```html
+<h2>Register</h2>
+<form method="POST">
+    <label>Username:</label>
+    <input type="text" name="username" required><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required><br>
+
+    <button type="submit">Register</button>
+</form>
+
+<p>Already have an account? <a href="/login">Login here</a></p>
+
+```
+
+# Home2.Html
+
+```python
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Welcome!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="home2">
+    <div class="content">
+        <h1>Welcome, you are logged in!</h1>
+        <p>This is a colorful page. Enjoy your session!</p>
+        <p><a href="/">Go back to the main page</a></p>
+    </div>
+</body>
+</html>
+
+```
+
