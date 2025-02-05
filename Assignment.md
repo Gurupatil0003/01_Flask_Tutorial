@@ -95,8 +95,8 @@ This repository contains **75 Flask web development project ideas** categorized 
 ---
 
 ## How to Use These Ideas  
-- Pick a project based on your **skill level**.  
-- Start by creating a **Flask app** and setting up **routes, models, and templates**.  
+- Pick a project based on your **Roll number**.  
+- Start by creating a **Flask app** and setting up **routes, models, and template,static**.  
 - Use **Flask-SQLAlchemy** for database handling.  
 - Use **Flask-WTF** for forms and input validation.  
 - Integrate **Bootstrap or Tailwind CSS** for UI design.  
