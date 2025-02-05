@@ -93,8 +93,18 @@ This repository contains **75 Flask web development project ideas** categorized 
 | 75 | Auction Website | Users can bid on listed products. |
 
 ---
+~~~python
+## How to Use These Ideas  /flask_project
+│── /static              # Static files (CSS, JS, Images)
+│── /templates           # HTML templates
+│── app.py               # Main Flask application file
+│── requirements.txt     # List of dependencies
+│── .env                 # Environment variables (optional)
+│── README.md            # Project documentation
+│── .gitignore           # Git ignore file
 
-## How to Use These Ideas  
+~~~
+
 - Pick a project based on your **Roll number**.  
 - Start by creating a **Flask app** and setting up **routes, models, and template,static**.  
 - Use **Flask-SQLAlchemy** for database handling.  
@@ -103,3 +113,5 @@ This repository contains **75 Flask web development project ideas** categorized 
 - Deploy using **Heroku, Vercel, or Render**.  
 
 Happy Coding! 🚀  
+
+
