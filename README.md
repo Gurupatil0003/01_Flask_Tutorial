@@ -336,11 +336,50 @@ if __name__ == '__main__':
 # index Page
 
 ```python
-<h1>Welcome!</h1>
-<a href="/login">Login</a> | <a href="/register">Register</a>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <a href="/login">Login</a> | <a href="/register">Register</a>
+</body>
+</html>
 
 ```
+
+
+#index page css
+~~~python
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin: 10px;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+
+~~~
 
 # Login Page
 ```python
