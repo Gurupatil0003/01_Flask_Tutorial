@@ -1,0 +1,296 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Background Animation with Gradient Shift */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    animation: gradientShift 8s infinite alternate ease-in-out;
+}
+
+/* Animated Background Particles */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 6s infinite alternate ease-in-out;
+}
+
+body::before {
+    width: 200px;
+    height: 200px;
+    top: 5%;
+    left: 10%;
+}
+
+body::after {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    right: 15%;
+}
+
+/* Gradient Background Shift Animation */
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    100% {
+        background: linear-gradient(135deg, #ff6b6b, #ff4081);
+    }
+}
+
+/* Floating Animation for Particles */
+@keyframes float {
+    from { transform: translateY(-15px); }
+    to { transform: translateY(15px); }
+}
+
+/* Main Container with 3D Perspective */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 400px;
+    position: relative;
+    z-index: 2;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    animation: rotateIn 1s ease-in-out, fadeIn 1s ease-in-out;
+}
+
+/* Container Rotate In Effect */
+@keyframes rotateIn {
+    from { transform: rotateY(-90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input Fields with Neon Glow */
+input, textarea {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: 0.4s;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+input:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Buttons with 3D Neon Hover Effect */
+button {
+    background: linear-gradient(45deg, #ff4081, #ff6b6b);
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: inline-block;
+    box-shadow: 0px 4px 20px rgba(255, 64, 129, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Neon Glow and Expand on Hover */
+button::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 25px rgba(255, 64, 129, 0.7);
+}
+
+button:hover::before {
+    transform: scale(1.8);
+}
+
+/* Success Popup with Bounce and 3D Rotation */
+.popup {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: popupBounce 1s ease-in-out, rotatePopup 1s ease-in-out;
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Popup Bounce Animation */
+@keyframes popupBounce {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* 3D Rotation for Popup */
+@keyframes rotatePopup {
+    from { transform: rotateX(-45deg); }
+    to { transform: rotateX(0deg); }
+}
+
+/* Link Styling */
+a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------- */
+/* 3D Rotating Cube – Extra "Motion" Element for Wow Factor          */
+/* ---------------------------------------------------------------- */
+.cube-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    perspective: 800px;
+    z-index: 3;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 5s infinite linear;
+}
+
+.cube div {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Positioning Cube Faces */
+.cube .front  { transform: translateZ(75px); }
+.cube .back   { transform: rotateY(180deg) translateZ(75px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(75px); }
+.cube .right  { transform: rotateY(90deg) translateZ(75px); }
+.cube .top    { transform: rotateX(90deg) translateZ(75px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+/* Cube Rotation Animation */
+@keyframes rotateCube {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+
+/* Success Popup Styling */
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+    backdrop-filter: blur(10px);   /* Glass effect */
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0.5) rotateX(-45deg);
+    opacity: 0;
+    animation: popupAppear 0.8s forwards ease-out, rotatePopup 0.8s forwards ease-out;
+}
+
+/* Keyframe for appearance with bounce effect */
+@keyframes popupAppear {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Keyframe for 3D rotation effect */
+@keyframes rotatePopup {
+    from {
+        transform: translate(-50%, -50%) rotateX(-45deg) scale(0.5);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateX(0deg) scale(1);
+    }
+}
+
+.popup h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.popup p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.popup button {
+    background: linear-gradient(45deg, #ff4081, #ff6b6b);
+    border: none;
+    padding: 12px 20px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+}
+
+.popup button:hover {
+    background: linear-gradient(45deg, #ff6b6b, #ff4081);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 64, 129, 0.7);
+}
