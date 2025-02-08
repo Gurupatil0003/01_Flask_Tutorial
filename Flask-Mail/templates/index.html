@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Send Email</h2>
+        <form action="{{ url_for('send_mail') }}" method="POST">
+            <label>Recipient Email:</label>
+            <input type="email" name="recipient" required>
+            <label>Subject:</label>
+            <input type="text" name="subject" required>
+            <label>Message:</label>
+            <textarea name="body" required></textarea>
+            <button type="submit">Send Email</button>
+        </form>
+        <br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
