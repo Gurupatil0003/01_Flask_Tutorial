@@ -1,0 +1,94 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3f4f6, #dfe9f3);
+    text-align: center;
+    margin: 50px;
+    color: #333;
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 32px;
+    color: #222;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.05);
+}
+
+/* File Input */
+input[type="file"] {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+/* Upload Button - Green Theme */
+input[type="submit"] {
+    display: inline-block;
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Upload Button Hover */
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Upload Button Click */
+input[type="submit"]:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Download Button - Blue Theme */
+a {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Download Button Hover */
+a:hover {
+    background: linear-gradient(135deg, #0056b3, #00408a);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Download Button Click */
+a:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
