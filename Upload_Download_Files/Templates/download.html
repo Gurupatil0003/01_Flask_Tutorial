@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
 <h1>Download File</h1>
-<p>Click the link below to download your file:</p>
-<a href="/download/{{ filename }}">{{ filename }}</a>
+    <p>Click the link below to download your file:</p>
+    <a href="{{ url_for('download_file', filename=filename) }}">Download {{ filename }}</a>
