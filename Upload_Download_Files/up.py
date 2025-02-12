@@ -12,13 +12,12 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    if 'file' not in request.files:
-        return "No file part"
-    file = request.files['file']
-    if file.filename == '':
-        return "No selected file"
+    file = request.files.get('file')
+    if not file or file.filename == '':
+        return "No file selected"
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
     return redirect(url_for('download_page', filename=file.filename))
+
 
 @app.route('/download/<filename>')
 def download_page(filename):
