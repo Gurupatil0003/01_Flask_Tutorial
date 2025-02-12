@@ -98,3 +98,21 @@ CREATE TABLE email_log (
 select * from user;
 
 ```
+
+# Session:
+- A session is like a temporary storage for user data while they are using a website. It helps the website remember who  the user is after they log in.
+
+Example:
+
+- You log into a website.
+- The site keeps your login information in a session so you don’t have to log in again on every page.
+ When you log out, the session is cleared.
+
+# Cookies:
+- A cookie is a small piece of data stored in your browser by a website. It helps websites remember things even after    you close the browser.
+
+Example:
+
+- You visit an online store, add items to your cart, and close the browser.
+- When you come back later, the items are still in your cart because the website stored them in a cookie.
+
