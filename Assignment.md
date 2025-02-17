@@ -115,3 +115,91 @@ This repository contains **75 Flask web development project ideas** categorized 
 Happy Coding! 🚀  
 
 
+
+# Assignment 2
+
+# Flask Web Development Project Ideas
+
+This repository contains a collection of Flask-based web development project ideas designed to enhance skills in building full-stack web applications using Flask.
+
+## Project Ideas
+
+| #  | Project Name                                | Description                                                             |
+|----|---------------------------------------------|-------------------------------------------------------------------------|
+| 1  | Hyperlocal Restaurant Review System         | Users review local restaurants with geo-based search..                              |
+| 2  | Multi-Tenant Inventory Management System    | A web app where multiple businesses can manage their inventory separately with admin dashboards. |
+| 3  | Subscription-Based Digital Magazine         | Users subscribe to access exclusive digital magazines, with Stripe/PayPal integration. |
+| 4  | Multi-Store E-Commerce Platform             | Each seller can create their store, list products, and track sales.      |
+| 5  | Online Rental Marketplace                   | Users can rent out properties, vehicles, or equipment with payment processing. |
+| 6  | Event Ticket Resale Platform                | Users buy and resell event tickets with seat selection.                 |
+| 7  | Online Multilingual Forum                   | Users can post discussions in multiple languages with built-in translation features. |
+| 8  | Advanced Task Management System            | A Kanban-style board for managing projects with deadlines and priority levels. |
+| 9  | Professional Networking Platform            | A Flask-based job networking site where users can connect, chat, and post job opportunities. |
+| 10 | Video Conference Web App                   | Secure meeting rooms with user authentication, calendar scheduling, and link sharing. |
+| 11 | E-Library with E-Book Reader                | Digital book borrowing system with an online reader interface.         |
+| 12 | Online Bidding and Tender Management System | Businesses can post tenders, and vendors can bid on contracts.          |
+| 13 | Loyalty Reward Points System                | Users earn points for purchases and redeem them on partner platforms.   |
+| 14 | Cloud-Based Document Collaboration Tool     | Users can collaborate on text documents in real-time, with revision tracking. |
+| 15 | Multi-Tenant Blogging Platform              | Users can create their own independent blogs with custom domains.       |
+| 16 | Advanced Travel Booking System              | Users can book flights, hotels, and rental cars with dynamic pricing.   |
+| 17 | Enterprise HR Management System            | A full HR solution with payroll, attendance, and leave management.     |
+| 18 | Stock Portfolio Tracker                     | Users can track their stock investments with historical performance graphs. |
+| 19 | Legal Document Generator                    | Users can generate contracts and agreements by filling out customizable templates. |
+| 20 | E-Commerce Price Comparison Website         | Aggregates product prices from multiple e-commerce websites.           |
+| 21 | Multi-User Expense Management System        | Users in groups can track shared expenses, split bills, and settle payments. |
+| 22 | Crowd-Sourced Service Review Platform      | Users can rate and review local service providers (plumbers, electricians, etc.). |
+| 23 | Customizable News Aggregator                | Users can create personalized news feeds based on their preferences.   |
+| 24 | Personalized Learning Dashboard             | Users can track their learning progress, courses, and certifications.  |
+| 25 | Community-Based Skill Exchange Platform     | Users barter skills (e.g., language learning for programming lessons). |
+| 26 | Freelance Task Marketplace                  | Small task marketplace where users post and accept micro-jobs.         |
+| 27 | Customizable Workflow Automation System     | Users create automated workflows to handle repetitive business tasks. |
+| 28 | Personal Financial Goal Tracker             | Users set savings goals and track their financial progress.            |
+| 29 | Subscription Box Service Platform           | Users subscribe to receive curated monthly product boxes.              |
+| 30 | Hyperlocal Classifieds Website              | Users buy, sell, and trade locally with location-based listings.       |
+| 31 | Cloud-Based Password Manager                | Securely store and retrieve passwords with encryption.                 |
+| 32 | Personalized Calendar and Task Manager      | A customizable calendar with event reminders and daily planning.       |
+| 33 | Business Contact Management System          | Organize and track customer relationships and interactions.            |
+| 34 | Property Auction Website                    | Users bid on real estate listings with live auction updates.           |
+| 35 | Carpool and Ride-Sharing System             | Users can find and share rides with real-time matching.                |
+| 36 | Smart Subscription Management System        | Track and manage monthly subscriptions with reminders.                 |
+| 37 | Professional Resume Portfolio Builder       | Users can create interactive resumes with embedded multimedia.         |
+| 38 | Multi-Tenant Ticket Support System          | Businesses can manage customer support tickets and assign agents.      |
+| 39 | Online Digital Signature Platform           | Users sign, verify, and store documents with e-signatures.             |
+| 40 | Private Data Vault                          | Secure encrypted storage for sensitive files and notes.                |
+| 41 | Digital Voting and Survey Platform          | Secure polling and voting system for elections and research.           |
+| 42 | Tenant and Landlord Property Management System | Landlords and tenants can track rental payments and leases.         |
+| 43 | Online Art and NFT Marketplace              | A marketplace for digital artists to sell artwork without AI.          |
+| 44 | Healthcare Appointment Scheduling System    | Patients can book doctor appointments with availability checking.     |
+| 45 | Legal Aid Consultation Booking System       | Users schedule consultations with lawyers and get legal guidance.      |
+| 46 | Self-Hosted Email Marketing Platform        | Businesses manage email campaigns and track engagement.                |
+| 47 | Custom QR Code Generator and Tracker       | Users generate, scan, and track QR code interactions.                  |
+| 48 | Multi-Vendor Food Delivery System           | Users order food from multiple restaurants, with driver tracking.     |
+| 49 | Online Rental Agreement Generator           | Users create rental agreements with legal templates.                   |
+| 50 | Professional Course Certification Generator | Instructors can issue verifiable course certificates.                   |
+| 51 | Task-Based Crowdfunding Platform            | Users post tasks that require crowdfunding to complete.                |
+| 52 | Multi-Branch Retail Store Management        | Manage multiple retail locations from one dashboard.                   |
+| 53 | Secure Online Will & Estate Planning        | Users draft and manage digital wills and legal documents.              |
+| 54 | Multi-User Budgeting and Savings App        | Families or teams can collaboratively manage budgets.                  |
+| 55 | High-Security Vault for Legal Documents     | Securely store legal records with multi-user access.                   |
+| 56 | Workplace Task Delegation System            | Assign, monitor, and evaluate employee tasks.                          |
+| 57 | Online Tutoring Platform                    | Tutors offer live classes and track student progress.                  |
+| 58 | Multi-Store Warehouse Inventory System      | Manage stock levels across multiple warehouses.                        |
+| 59 | Job Board with Employer Reviews             | Users can apply for jobs and review employers.                         |
+| 60 | Customized Wedding Planning Platform        | Couples plan weddings with vendor selection and budgeting tools.       |
+| 61 | Automated Subscription Billing System       | Businesses manage recurring payments and invoices.                     |
+| 62 | Blockchain-Based Digital Notary Service     | Documents are time-stamped and securely stored.                        |
+| 63 | Hyperlocal Restaurant Review System         | Users review local restaurants with geo-based search.                  |
+| 64 | Custom E-Greeting Card Platform             | Users design and send digital greeting cards.                          |
+| 65 | Multilingual Business Directory             | Directory of businesses with translation support.                      |
+| 66 | Online Fitness Tracking System              | Users track fitness goals, workouts, and progress.                     |
+| 67 | Online Recipe Sharing Platform              | Users can share and discover recipes with video tutorials.             |
+| 68 | Digital Portfolio Showcase for Creatives    | Artists can showcase their work with video, images, and descriptions.  |
+| 69 | Virtual Personal Assistant                  | A customizable digital assistant to manage tasks and schedules.        |
+| 70 | Online Collaborative Whiteboard            | A virtual whiteboard for teams to brainstorm and collaborate.          |
+| 71 | Real-Time Sports Score Tracker              | A real-time sports score and statistics tracker.                       |
+| 72 | Online Event Management System              | Users can organize and promote events, manage attendees, and sell tickets. |
+| 73 | Crowdsourced Translation Platform           | Users collaborate on translating content into multiple languages.     |
+| 74 | Online Inventory Replenishment System       | Automated inventory restocking based on sales trends.                  |
+| 75 | Digital Media Asset Management System       | Manage and organize large collections of digital media files.          |
+
+
