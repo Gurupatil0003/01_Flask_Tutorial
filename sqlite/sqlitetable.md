@@ -1,3 +1,5 @@
+#### app.py
+```python
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
@@ -39,3 +41,30 @@ with app.app_context():
 # Run the app
 if __name__ == '__main__':
     app.run(debug=True)
+
+```
+### html
+```html
+<h1>Users Table</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.city }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+```
