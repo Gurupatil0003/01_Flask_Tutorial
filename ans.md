@@ -379,3 +379,363 @@ def factorial(n):
 # Test the function
 result = factorial(5)
 print(result)  # Output: 120
+```
+
+# Unit 3
+
+# Modules, Packages, and Libraries in Python
+
+## 1. Modules
+
+A **module** in Python is a file containing Python code that can define functions, classes, and variables. It can also include runnable code. Modules allow you to break down large programs into smaller, manageable, and organized files. 
+
+### Importing a Module:
+You can import a module into your Python script using the `import` keyword. Once imported, you can access the functions and variables defined within the module.
+
+```python
+# Import the math module
+import math
+
+# Use the sqrt function from the math module
+result = math.sqrt(16)
+print(result)  # Output: 4.0
+```
+
+### Creating Your Own Module
+
+To create a module, simply save a Python file with the `.py` extension, and you can import it into other programs.
+
+#### Example:
+
+If you have a file `my_module.py` with the following content:
+
+```python
+# my_module.py
+def greet(name):
+    return "Hello, " + name
+```
+
+### 2. Packages
+
+A package is a collection of modules organized in directories. A package typically contains multiple modules (Python files) grouped together under a common directory.
+
+#### Creating a Package:
+
+To create a package, organize the Python files (modules) in a directory and include an `__init__.py` file to mark the directory as a package. The `__init__.py` file can be empty or contain initialization code for the package.
+
+#### Example of a Package Structure:
+``` python
+my_package/
+    __init__.py
+    module1.py
+    module2.py
+```
+
+- `my_package/` is the main package directory.
+- `__init__.py` is the file that tells Python to treat this directory as a package.
+- `module1.py` and `module2.py` are modules within the package.
+
+#### Importing and Using a Module from a Package:
+
+To import and use a module from a package:
+
+```python
+from my_package import module1
+
+module1.some_function()
+```
+
+## 3. Libraries
+
+A **library** is a collection of pre-written code (modules and packages) that you can use in your program to avoid reinventing the wheel. Python has a rich standard library, but you can also install **third-party libraries** to extend Python's functionality.
+
+---
+
+### 📚 Examples of Popular Python Libraries:
+
+#### 🔬 Data Science Libraries:
+- **NumPy**: For numerical computations.
+- **Pandas**: For data manipulation and analysis.
+- **Matplotlib**: For creating static, animated, and interactive visualizations.
+
+#### 🌐 Web Development Libraries:
+- **Flask**: A micro web framework for building web applications.
+- **Django**: A high-level web framework for rapid web development.
+
+#### 🤖 Machine Learning Libraries:
+- **Scikit-learn**: For machine learning algorithms and tools.
+- **TensorFlow**: For deep learning and neural network models.
+- **Keras**: A high-level neural networks API.
+
+---
+
+### 📦 Installing and Using External Libraries
+
+You can install external libraries using `pip`, Python's package manager.
+
+``` bash
+pip install numpy
+```
+
+``` python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+print(arr)  # Output: [1 2 3]
+
+```
+
+#### ✅ Advantages of Using Libraries:
+Efficiency: Libraries help save time by offering pre-built solutions for common problems.
+
+Reusability: Libraries allow you to reuse code and extend functionality without starting from scratch.
+
+Community Support: Popular libraries often have large communities and documentation, making them easier to use.
+
+
+## Git and PyCharm Version Integration
+
+### ✅ Prerequisites
+
+- **Git Installed**  
+  Make sure Git is installed on your system. You can verify this by running:
+  ```bash
+  git --version
+  ```
+
+PyCharm Installed
+Ensure you're using a recent version of PyCharm (Community or Professional edition).
+
+🔧 Configuring Git in PyCharm
+Open PyCharm.
+
+Go to File > Settings (or PyCharm > Preferences on macOS).
+
+Navigate to Version Control > Git.
+
+In the Path to Git executable, provide the correct Git path:
+
+Windows: C:\Program Files\Git\bin\git.exe
+
+macOS/Linux: Just use git (if it's in the system PATH)
+
+Click the Test button to check if Git is detected.
+
+Click OK to save the settings.
+
+✅ Verifying Git Version in PyCharm
+Go to VCS > Git > Show Git Log to view commit history.
+
+Or open the Terminal tab in PyCharm and run:
+
+``` bash
+
+git --version
+
+```
+
+
+# 🐍 Python Connectivity with MySQL
+
+This guide demonstrates how to connect Python with a MySQL database using the `mysql-connector-python` library.
+
+---
+
+## ✅ Prerequisites
+
+- Python installed (3.x recommended)
+- MySQL Server installed and running
+- MySQL user credentials (username, password)
+- Install MySQL connector:
+
+```bash
+pip install mysql-connector-python
+```
+
+## 🔗 Connecting to MySQL Database
+## 📌 Basic Connection Example
+
+``` python
+
+import mysql.connector
+
+# Establish connection
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="your_password",
+    database="your_database"
+)
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Execute a query
+cursor.execute("SELECT * FROM your_table")
+
+# Fetch results
+results = cursor.fetchall()
+
+# Print results
+for row in results:
+    print(row)
+
+# Close the connection
+cursor.close()
+conn.close()
+🛠️ Create Database and Table
+python
+Copy
+Edit
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="your_password"
+)
+
+cursor = conn.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS sample_db")
+cursor.execute("USE sample_db")
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+)
+""")
+
+conn.commit()
+cursor.close()
+conn.close()
+```
+
+# 🍃 Python with MongoDB - CRUD Operations
+
+This guide demonstrates how to perform **Create**, **Read**, **Update**, and **Delete (CRUD)** operations using **Python** and **MongoDB** via the `pymongo` library.
+
+---
+
+## ✅ Prerequisites
+
+- MongoDB installed and running locally or on the cloud (e.g., MongoDB Atlas)
+- Python 3.x installed
+- Install PyMongo:
+
+```bash
+pip install pymongo
+```
+
+``` python
+# Importing pymongo
+from pymongo import MongoClient
+
+# Step 1: Connect to MongoDB
+client = MongoClient("mongodb://localhost:27017/")  # Default host and port
+db = client["mydatabase"]                          # Create or connect to a database
+collection = db["students"]                        # Create or connect to a collection
+
+# Step 2: Create (Insert documents)
+student1 = {"name": "Guru", "age": 25, "course": "Python"}
+student2 = {"name": "Mounesh", "age": 24, "course": "JavaScript"}
+collection.insert_one(student1)
+collection.insert_one(student2)
+
+print("✅ Inserted documents.")
+
+# Step 3: Read (Retrieve documents)
+print("\n📖 All Students:")
+for student in collection.find():
+    print(student)
+
+# Step 4: Update (Modify documents)
+query = {"name": "Guru"}
+new_values = {"$set": {"age": 26}}
+collection.update_one(query, new_values)
+
+print("\n🔄 Updated Guru's age:")
+print(collection.find_one({"name": "Guru"}))
+
+# Step 5: Delete (Remove documents)
+delete_query = {"name": "Mounesh"}
+collection.delete_one(delete_query)
+
+print("\n❌ Deleted Mounesh. Remaining documents:")
+for student in collection.find():
+    print(student)
+
+# Optional: Drop the collection (cleanup)
+# collection.drop()
+```
+
+# Pytest Explanation with Example
+
+## What is Pytest?
+
+**Pytest** is a testing framework for Python that makes it easy to write simple as well as scalable test cases. It is used to ensure the correctness of your code and allows you to perform unit testing, integration testing, and functional testing.
+
+### Advantages of Using Pytest:
+- Simple syntax and powerful features
+- Supports fixtures and parameterized testing
+- Works with existing tests and test suites
+- Provides detailed error messages
+- Supports integration with continuous integration tools
+
+## Installation
+
+You can install pytest using `pip`:
+
+```bash
+pip install pytest
+```
+
+# Pytest Example for Calculator
+
+## Example: `calculator.py`
+
+This file contains the functions to be tested.
+
+```python
+# calculator.py
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+```
+
+# Create a Test File Using Pytest
+In this step, we create a test file that uses pytest to test the functions in calculator.py.
+
+## Example: test_calculator.py
+``` python
+# test_calculator.py
+import pytest
+from calculator import add, subtract
+
+def test_add():
+    assert add(2, 3) == 5
+
+def test_subtract():
+    assert subtract(5, 3) == 2
+Running the Tests
+To run the tests, use the following command in the terminal:
+```
+
+``` python
+pytest test_calculator.py
+```
+
+## Output
+When you run pytest on the test file, it will output the results:
+
+``` pytohn 
+$ pytest test_calculator.py
+==================== test session starts ====================
+collected 2 items
+
+test_calculator.py ..                                      [100%]
+
+===================== 2 passed in 0.03 seconds =================
+```
