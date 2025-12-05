@@ -488,3 +488,146 @@ h1 {
 }
 
 ```
+
+### dash.html
+```python
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <h1>Hotel Dashboard</h1>
+
+    {% for hotel in hotels %}
+    <div class="hotel-card" id="hotel-{{ loop.index }}">
+        <h2>{{ hotel.name }}</h2>
+        <p>Location: {{ hotel.location }}</p>
+        <p>Price: ₹{{ hotel.price }}</p>
+        <img src="{{ hotel.image }}" alt="{{ hotel.name }} image">
+
+        <!-- Booking Button -->
+        <button class="book-btn" onclick="bookHotel({{ loop.index }}, '{{ hotel.name }}', {{ hotel.price }})">
+            Book Now
+        </button>
+        <p class="booking-msg" id="msg-{{ loop.index }}"></p>
+    </div>
+    {% endfor %}
+
+    <script>
+        function bookHotel(index, hotelName, price) {
+            const msg = document.getElementById(`msg-${index}`);
+            msg.innerText = `Thank you! You booked ${hotelName} for ₹${price}.`;
+        }
+    </script>
+
+</body>
+</html>
+
+
+````
+
+```python
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Links -->
+    <div class="top-nav">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+
+    <h1>Hotel Dashboard</h1>
+
+    {% for hotel in hotels %}
+    <div id="hotel-{{ loop.index }}" class="hotel-card">
+        <h2>{{ hotel.name }}</h2>
+        <p>Location: {{ hotel.location }}</p>
+        <p>Price: ₹{{ hotel.price }}</p>
+        <img src="{{ hotel.image }}" alt="{{ hotel.name }} image">
+        
+        <!-- Mini Booking Form -->
+        <input type="text" id="name-{{ loop.index }}" placeholder="Your Name">
+        <button onclick="bookHotel({{ loop.index }}, '{{ hotel.name }}', {{ hotel.price }})">Book</button>
+        <p id="msg-{{ loop.index }}"></p>
+    </div>
+    {% endfor %}
+
+    <script>
+        function bookHotel(index, hotelName, price) {
+            const nameInput = document.getElementById(`name-${index}`);
+            const msg = document.getElementById(`msg-${index}`);
+            if(nameInput.value.trim() === "") {
+                msg.style.color = "red";
+                msg.innerText = "Please enter your name!";
+                return;
+            }
+            msg.style.color = "green";
+            msg.innerText = `Thank you, ${nameInput.value}! You booked ${hotelName} for ₹${price}.`;
+            nameInput.value = "";
+        }
+    </script>
+
+</body>
+</html>
+
+
+```python
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Links -->
+    <div class="top-nav">
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+
+    <h1>Hotel Dashboard</h1>
+
+    {% for hotel in hotels %}
+    <div id="hotel-{{ loop.index }}" class="hotel-card">
+        <h2>{{ hotel.name }}</h2>
+        <p>Location: {{ hotel.location }}</p>
+        <p>Price: ₹{{ hotel.price }}</p>
+        <img src="{{ hotel.image }}" alt="{{ hotel.name }} image">
+        
+        <!-- Mini Booking Form -->
+        <input type="text" id="name-{{ loop.index }}" placeholder="Your Name">
+        <button onclick="bookHotel({{ loop.index }}, '{{ hotel.name }}', {{ hotel.price }})">Book</button>
+        <p id="msg-{{ loop.index }}"></p>
+    </div>
+    {% endfor %}
+
+    <script>
+        function bookHotel(index, hotelName, price) {
+            const nameInput = document.getElementById(`name-${index}`);
+            const msg = document.getElementById(`msg-${index}`);
+            if(nameInput.value.trim() === "") {
+                msg.style.color = "red";
+                msg.innerText = "Please enter your name!";
+                return;
+            }
+            msg.style.color = "green";
+            msg.innerText = `Thank you, ${nameInput.value}! You booked ${hotelName} for ₹${price}.`;
+            nameInput.value = "";
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+```
