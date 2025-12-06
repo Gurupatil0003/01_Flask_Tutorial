@@ -631,3 +631,50 @@ h1 {
 
 
 ```
+
+
+```python
+### 📁 Database Commands
+show dbs
+use databaseName
+db
+db.dropDatabase()
+
+### 🗂️ Collection Commands
+show collections
+db.createCollection("name")
+db.name.drop()
+
+### 📝 Insert
+db.name.insertOne({ key: "value" })
+db.name.insertMany([{ k: 1 }, { k: 2 }])
+
+### 🔍 Query
+db.name.find()
+db.name.findOne({ key: "value" })
+db.name.find({ age: { $gt: 18 } })
+db.name.find().sort({ age: 1 })
+db.name.find().limit(5)
+db.name.find({}, { name: 1, _id: 0 })
+
+### ✏️ Update
+db.name.updateOne({ k: 1 }, { $set: { k: 2 } })
+db.name.updateMany({ k: 1 }, { $set: { k: 3 } })
+db.name.replaceOne({ k: 1 }, { x: 10 })
+
+### 🗑️ Delete
+db.name.deleteOne({ k: 1 })
+db.name.deleteMany({ k: 1 })
+
+### 📌 Index
+db.name.createIndex({ field: 1 })
+db.name.getIndexes()
+
+### 📊 Stats
+db.name.countDocuments()
+db.name.stats()
+db.stats()
+
+
+
+```
