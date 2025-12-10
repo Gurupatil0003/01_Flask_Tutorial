@@ -587,5 +587,133 @@ else:
 
 ```
 
+### 1️⃣ Handle division by zero
 
+### Question:
+### Write a program to divide two numbers and handle ZeroDivisionError.
+
+try:
+    a = int(input("Enter number: "))
+    b = int(input("Enter divisor: "))
+    print(a / b)
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+### 2️⃣ Handle invalid integer input
+
+### Question:
+### Take a number from the user and handle ValueError if input is not an integer.
+
+try:
+    num = int(input("Enter an integer: "))
+    print("You entered:", num)
+except ValueError:
+    print("Invalid input! Please enter an integer.")
+
+### 3️⃣ File not found exception
+
+### Question:
+### Read a file and handle FileNotFoundError.
+
+try:
+    f = open("data.txt")
+    print(f.read())
+except FileNotFoundError:
+    print("File does not exist!")
+
+### 4️⃣ Multiple exceptions in one block
+
+### Question:
+### Divide numbers and also check if input is valid.
+
+try:
+    a = int(input())
+    b = int(input())
+    print(a / b)
+except (ValueError, ZeroDivisionError):
+    print("Invalid input or division by zero!")
+
+### 5️⃣ Use finally block
+
+### Question:
+### Write a program that prints “Done” no matter what happens.
+
+try:
+    x = int(input())
+    print("Square:", x * x)
+except ValueError:
+    print("Please enter a valid number.")
+finally:
+    print("Done!")
+
+### 6️⃣ Custom exception for negative age
+
+### Question:
+### Raise a custom exception if age < 0.
+
+class NegativeAgeError(Exception):
+    pass
+
+age = int(input("Enter age: "))
+
+try:
+    if age < 0:
+        raise NegativeAgeError("Age cannot be negative!")
+    print("Age =", age)
+except NegativeAgeError as e:
+    print(e)
+
+### 7️⃣ Using else in exception handling
+
+### Question:
+### Print a message if no error happens.
+
+try:
+    n = int(input("Enter number: "))
+except ValueError:
+    print("Invalid number!")
+else:
+    print("Valid input:", n)
+
+### 8️⃣ Nested try–except
+
+### Question:
+### Handle errors inside nested blocks.
+
+try:
+    a = int(input())
+    try:
+        print(10 / a)
+    except ZeroDivisionError:
+        print("Inner: cannot divide by zero")
+except ValueError:
+    print("Outer: invalid input")
+
+### 9️⃣ Raise an exception manually
+
+### Raise TypeError if input is not string.
+
+data = 10
+
+try:
+    if not isinstance(data, str):
+        raise TypeError("Only strings allowed")
+    print(data)
+except TypeError as e:
+    print(e)
+
+## 🔟 Handle KeyError
+
+### Question:
+### Dictionary lookup with exception handling.
+
+```python
+d = {"name": "John", "age": 25}
+
+try:
+    print(d["salary"])
+except KeyError:
+    print("Key not found!")
+
+```
 
