@@ -681,3 +681,91 @@ if __name__ == '__main__':
 
 ```
 
+```python
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Chat App</title>
+
+    <!-- Bootstrap for simple styling -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Highlight.js for code formatting -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+
+    <!-- Custom styling -->
+    <style>
+        body {
+            background: #f7f7f7;
+        }
+        .container-box {
+            margin-top: 50px;
+            max-width: 800px;
+        }
+        #output {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+        pre {
+            padding: 15px;
+            background: #1e1e1e;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container container-box">
+    <h2 class="text-center mb-4">AI Chat</h2>
+
+    <form method="POST">
+        <textarea class="form-control mb-3" name="msg"
+                  rows="3" placeholder="Type your message...">{{ user_msg }}</textarea>
+
+        <button class="btn btn-primary w-100">Send</button>
+    </form>
+
+    {% if reply %}
+    <h4 class="mt-4">Response:</h4>
+
+    <!-- Output box, rendered with markdown -->
+    <div id="output"></div>
+
+    {% endif %}
+</div>
+
+
+<!-- Marked.js: Markdown parser -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- Highlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+<script>
+    {% if reply %}
+        // Render markdown to HTML
+        let raw = {{ reply|tojson }};
+        let html = marked.parse(raw);
+
+        // Insert into the page
+        document.getElementById("output").innerHTML = html;
+
+        // Highlight all code blocks
+        document.querySelectorAll("pre code").forEach(block => {
+            hljs.highlightElement(block);
+        });
+    {% endif %}
+</script>
+
+</body>
+</html>
+
+```
+
