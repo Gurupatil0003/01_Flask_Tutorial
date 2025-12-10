@@ -555,7 +555,37 @@ def special_substrings(s):
 
 print(special_substrings("abcaac"))  # Output: 4
 ```
+## gcd
 
+```python
+def gcd(a, b):
+    # If b becomes 0, a is the GCD
+    if b == 0:
+        return a
+    # Recursively call gcd with (b, a % b)
+    return gcd(b, a % b)
+
+# Example
+x = 36
+y = 60
+
+print("GCD is:", gcd(x, y))
+
+
+```
+
+## leap year
+
+```python
+year = 2000
+
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print("yes")
+else:
+    print("no")
+
+
+```
 
 
 
