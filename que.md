@@ -278,7 +278,9 @@ print(rev)
 
 
 ```
-6️⃣ Character Frequency Without Using Counter
+
+## 6️⃣ Character Frequency Without Using Counter
+```python
 Input
 "success"
 
