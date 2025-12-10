@@ -208,3 +208,282 @@ print(res)
 
 ```
 
+## tuple 
+
+```python
+
+t = (10, 20, 30, 40)
+for i in range(len(t)):
+    if t[i] == 30:
+        print(i)
+```
+## 2️⃣ Find index of element
+```python
+
+t = (11,5,99,3)
+mx = t[0]
+mn = t[0]
+
+for x in t:
+    if x > mx: mx = x
+    if x < mn: mn = x
+
+print(mx, mn)
+
+
+```
+
+## dict
+
+```python
+1️⃣ Count Frequency of Each Word in a Sentence
+Input
+Sky is blue and the sky is clear
+
+Expected Output
+{'sky': 2, 'is': 2, 'blue': 1, 'and': 1, 'the': 1, 'clear': 1}
+```
+```python
+sentence = "Sky is blue and the sky is clear"
+sentence = sentence.lower().split()
+
+freq = {}
+
+for word in sentence:
+    if word in freq:
+        freq[word] += 1
+    else:
+        freq[word] = 1
+
+print(freq)
+
+```
+
+```python
+3️⃣ Reverse Keys and Values
+Input
+{'a': 1, 'b': 2, 'c': 3}
+
+Output
+{1: 'a', 2: 'b', 3: 'c'}
+
+✅ Code
+d = {'a': 1, 'b': 2, 'c': 3}
+
+rev = {}
+for k, v in d.items():
+    rev[v] = k
+
+print(rev)
+
+
+```
+6️⃣ Character Frequency Without Using Counter
+Input
+"success"
+
+Output
+{'s': 3, 'u': 1, 'c': 2, 'e': 1}
+
+✅ Code
+s = "success"
+freq = {}
+
+for ch in s:
+    if ch in freq:
+        freq[ch] += 1
+    else:
+        freq[ch] = 1
+
+print(freq)
+```
+## palidrome
+```python
+a="12trt1"
+
+b=a[::-1]
+
+if a==b:
+    print("is aplidrome")
+else:
+    print("no")
+```
+
+## 6️⃣ Check if two strings are anagrams
+```
+a = "listen"
+b = "silent"
+
+if sorted(a.lower()) == sorted(b.lower()):
+    print(True)
+else:
+    print(False)
+
+```
+## 4️⃣ Count uppercase, lowercase, digits, and spaces
+
+```python
+s = "Cts 2026 GenC"
+upper = lower = digit = space = 0
+
+for ch in s:
+    if ch.isupper():
+        upper += 1
+    elif ch.islower():
+        lower += 1
+    elif ch.isdigit():
+        digit += 1
+    elif ch == " ":
+        space += 1
+
+print(upper, lower, digit, space)
+
+
+```
+
+## 2️⃣ Count vowels and consonants
+
+```python
+s = "cognizant"
+vowels = "aeiouAEIOU"
+v_count = c_count = 0
+
+for ch in s:
+    if ch in vowels:
+        v_count += 1
+    else:
+        c_count += 1
+
+print("Vowels:", v_count, "Consonants:", c_count)
+
+```
+## Loops
+## 1️⃣ Print numbers from 1 to 10
+```python
+for i in range(1, 11):
+    print(i, end=" ")
+```
+## 2️⃣ Print even numbers between 1 to 50
+```python
+for i in range(1, 51):
+    if i % 2 == 0:
+        print(i, end=" ")
+```
+
+## 3️⃣ Sum of first N natural numbers
+```python
+N = 10
+total = 0
+
+for i in range(1, N+1):
+    total += i
+
+print(total)
+
+```
+
+## 5️⃣ Fibonacci series up to N terms
+```python
+N = 7
+a, b = 0, 1
+
+for i in range(N):
+    print(a, end=" ")
+    a, b = b, a+b
+```
+
+## function
+
+```python
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n-1)
+
+print(factorial(5))
+print(factorial(7))
+
+
+```
+```python
+def validate_password(pwd):
+    if len(pwd) > 8:
+        print("Valid")
+    else:
+        print("Invalid")
+
+validate_password("CTS2026")
+validate_password("StrongPassword")
+
+
+```
+## Oops
+```python
+class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Insufficient balance")
+
+    def show_balance(self):
+        print(self.name, "balance:", self.balance)
+
+
+# Usage
+account = BankAccount("Alice", 1000)
+account.deposit(500)
+account.withdraw(300)
+account.show_balance()
+```
+
+```python
+class Student:
+    def __init__(self, name, roll_no, marks):
+        self.name = name
+        self.roll_no = roll_no
+        self.marks = marks  # List of marks
+
+    def average_marks(self):
+        return sum(self.marks) / len(self.marks)
+
+    def display(self):
+        print(self.name, "Roll No:", self.roll_no)
+        print("Average marks:", self.average_marks())
+
+
+# Usage
+student = Student("Bob", 101, [80, 90, 85])
+student.display()
+```
+
+```python
+class Cat:
+    def mood(self): 
+       print("Grumpy") 
+    def sound(self): 
+       print("Meow") 
+ 
+class Dog:
+    def mood(self): 
+       print("Happy") 
+    def sound(self): 
+       print("Woof") 
+ 
+hello_kitty = Cat()
+hello_puppy = Dog()
+ 
+for pet in (hello_kitty, hello_puppy):
+    pet.mood()
+    pet.sound()
+
+```
+
