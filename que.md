@@ -489,3 +489,73 @@ for pet in (hello_kitty, hello_puppy):
 
 ```
 
+## 5. First non-repeating character
+```python
+def first_non_rep(s):
+    for ch in s:
+        if s.count(ch) == 1:
+            return ch
+    return None
+
+print(first_non_rep("swiss"))
+```
+
+## Remove duplicates (preserve order)
+```python
+def rem_dup(s):
+    res = ""
+    for ch in s:
+        if ch not in res:
+            res += ch
+    return res
+
+print(rem_dup("programming"))
+
+```
+## Rotate string by K
+```python
+def rotate_string(s, k):
+    k %= len(s)
+    return s[-k:] + s[:-k]
+
+print(rotate_string("abcdef", 2))  # efabcd
+
+
+```
+
+## 5. Password validation
+```python
+def validate_password(p):
+    if len(p) < 8:
+        return False
+
+    low = up = dig = sp = 0
+    
+    for ch in p:
+        if ch.islower(): low = 1
+        elif ch.isupper(): up = 1
+        elif ch.isdigit(): dig = 1
+        else: sp = 1
+
+    return low and up and dig and sp
+
+print(validate_password("Aa1@abcd"))
+
+```
+
+## Count “special substrings” (first & last char same)
+```python
+def special_substrings(s):
+    count = 0
+    for i in range(len(s)):
+        for j in range(i+1, len(s)):
+            if s[i] == s[j]:
+                count += 1
+    return count
+
+print(special_substrings("abcaac"))  # Output: 4
+```
+
+
+
+
