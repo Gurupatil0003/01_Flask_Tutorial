@@ -52,14 +52,23 @@ Question: {query}
     return llm.generate_content(prompt).text.strip()
 
 # ----------------------------
-# Simple User Input (CLI)
+# Simple User Input Loop
 # ----------------------------
 if __name__ == "__main__":
-    query = input("Ask your question: ")
-    answer = rag(query)
+    print("🔍 RAG Q&A System (type 'exit' to quit)\n")
 
-    print("\nAnswer:")
-    print(answer)
+    while True:
+        query = input("Ask your question: ")
+
+        if query.lower() == "exit":
+            print("👋 Exiting...")
+            break
+
+        answer = rag(query)
+
+        print("\nAnswer:")
+        print(answer)
+        print("-" * 40)
 
 
 
