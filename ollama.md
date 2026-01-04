@@ -188,3 +188,230 @@ if __name__ == "__main__":
 
 
 ```
+
+
+```python
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Personal Diet Coach</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #1cb5e0, #000046);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 15px;
+    overflow-x: hidden;
+}
+
+/* Floating orbs */
+.orb {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(67,206,162,0.6), transparent 70%);
+    filter: blur(90px);
+    animation: float 10s infinite alternate;
+    z-index: -1;
+}
+
+.orb.one { top: 10%; left: 10%; }
+.orb.two { bottom: 10%; right: 15%; animation-delay: 2s; }
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-40px); }
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(22px);
+    border-radius: 26px;
+    padding: 40px;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.4);
+    animation: fadeIn 0.9s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 18px;
+    border-radius: 14px;
+    border: none;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(67,206,162,0.4);
+}
+
+/* Cards */
+.cards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+.card {
+    background: rgba(255,255,255,0.85);
+    border-radius: 22px;
+    padding: 26px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+    animation: rise 0.6s ease;
+}
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #1b5e20;
+}
+
+.card p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #333;
+    white-space: pre-line;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.note {
+    margin-top: 40px;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(67,206,162,0.2);
+    color: #0f5132;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<div class="container">
+    <h2>🥗 AI Personal Diet Coach</h2>
+
+    <form method="POST">
+        <textarea name="message" placeholder="Ask anything diet-related (e.g., how to reduce weight)">{{ user_input }}</textarea>
+        <button type="submit">Generate Smart Plan</button>
+    </form>
+
+    {% if response %}
+        {% set clean = response | replace("**", "") | replace("*", "") %}
+
+        <div class="cards">
+
+            <div class="card full">
+                <h3>🎯 Goal Overview</h3>
+                <p>{{ clean }}</p>
+            </div>
+
+            <div class="card">
+                <h3>🧠 Smart Strategy</h3>
+                <p>
+                Focus on sustainable habits instead of quick fixes.
+                Prioritize whole foods, portion control, and consistency.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📅 Practical Routine</h3>
+                <p>
+                Build routines you can follow long-term.
+                Track progress weekly and refine slowly.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🏃 Lifestyle Upgrade</h3>
+                <p>
+                Sleep 7–8 hours, stay hydrated,
+                manage stress, and stay active daily.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>✅ Do’s & ❌ Don’ts</h3>
+                <p>
+                ✔ Eat mindfully  
+                ✔ Stay consistent  
+                ✘ Avoid crash diets  
+                ✘ Avoid processed sugar
+                </p>
+            </div>
+
+        </div>
+
+        <div class="note">
+            💡 This is a general guidance plan. For medical conditions,
+            consult a certified nutrition professional.
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
+
+
+
+
+```
