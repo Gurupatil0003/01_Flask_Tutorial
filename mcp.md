@@ -12,8 +12,6 @@ dependencies = [
     "google-genai>=3.6.1",
     "mcp[cli]",
 ]
-
-
 ```
 
 
