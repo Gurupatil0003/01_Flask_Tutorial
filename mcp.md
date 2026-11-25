@@ -47,6 +47,11 @@ def ask_gemini(question: str):
 mcp.run()
 
 ```
+```python
+uv run fastmcp dev inspector server.py
+
+```
+
 
 ```python
 uv add "fastmcp[apps]"
