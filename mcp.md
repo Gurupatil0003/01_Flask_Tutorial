@@ -24,7 +24,7 @@ from google import genai
 
 mcp = FastMCP("Gemini Calculator")
 
-client = genai.Client(api_key="AIzaSyA3koXS7uL32NHX5evLxfxKNPRVluxhRUs")
+client = genai.Client(api_key="")
 
 @mcp.tool()
 def calculate(a: float, b: float, operation: str):
