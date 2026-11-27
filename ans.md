@@ -9,6 +9,7 @@ Identifiers are names used to identify variables, functions, classes, modules, e
 - Cannot use keywords like `for`, `if`, `else`, `class`, etc.
 - Are case-sensitive: `Name` and `name` are different.
 
+
 ### Operators:
 Operators are symbols that perform operations on variables and values.
 
